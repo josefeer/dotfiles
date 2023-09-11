@@ -1,0 +1,26 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.zshrc: 
+    ~/.gitconfig: 
+      force: true
+    ~/.config/kitty:
+      create: true
+      path: config/kitty
+      force: true
+    ~/.config/nvim/lua/user:
+      create: true
+      path: config/astronvim
+      force: true
+
+- create:
+    - ~/Developer
+
+- shell:
+  - command: ./setup_binaries.zsh
+    stdout: true
+    stderr: true

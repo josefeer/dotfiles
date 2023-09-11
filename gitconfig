@@ -1,0 +1,17 @@
+[user]
+	email = contacto@jfmorales.com
+	name = Jose Fernando Morales
+[core]
+	editor = nvim --clean
+[alias]
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(auto)<%ce>%Creset' 
+	st = status
+	ck = checkout
+	bl = branch -vv
+	can = commit --amend --no-edit
+	c = commit
+	cm = commit -m
+	po = pull origin
+	wa = worktree add
+	wl = worktree list
+	wp = worktree prune
