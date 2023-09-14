@@ -15,3 +15,5 @@
 	wa = worktree add
 	wl = worktree list
 	wp = worktree prune
+[safe]
+	directory = /opt/homebrew
