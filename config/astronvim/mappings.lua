@@ -8,13 +8,12 @@ return {
   -- tables with the `name` key will be registered with which-key if it's installed
   -- this is useful for naming menus
   n = {
-
     -- Tabs
     ["<leader>T"] = { name = "Tabs" },
     ["<leader>Tn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
     ["<leader>Tc"] = { "<cmd>tabclose<cr>", desc = "Close tab" },
 
-    --- Buffer Nav
+    --- Buffers
     ["<leader>b"] = { name = "Buffers" },
     ["<leader>be"] = { "<cmd>echo expand('%:p')<cr>", desc = "Where is this buffer?" },
     ["<S-l>"] = { function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end, desc = "Next buffer" },
@@ -44,10 +43,10 @@ return {
     ["<leader>Q"] = { "<cmd>qa!<cr>", desc = "Quit All" },
 
     -- Marks
-    -- NOTE: <cmd>delim! | delm A-Z0-9 | wshada!<cr> whipes out all marks in your machine
+    ["<leader>m"] = { name = "Marks" },
+    ["<leader>mD"] = { "<cmd>delm! | delm A-Z0-9 | wshada!<cr>", desc = "Delete all marks" },
   },
   t = {
-    -- setting a mapping to false will disable it
-    -- ["<esc>"] = false,
+    ["<C-l>"] = {"<cmd>TermExec cmd='clear'<cr>", desc = "Clear ToggleTerm Terminal"}
   },
 }
