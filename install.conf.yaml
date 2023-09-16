@@ -16,6 +16,10 @@
       create: true
       path: config/astronvim
       force: true
+    ~/.config/lazygit/config.yml:
+      create: true
+      path: config/lazygit/config.yml
+      force: true
 
 - create:
     - ~/Developer
