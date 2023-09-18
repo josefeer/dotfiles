@@ -45,8 +45,15 @@ return {
     -- Marks
     ["<leader>m"] = { name = "Marks" },
     ["<leader>mD"] = { "<cmd>delm! | delm A-Z0-9 | wshada!<cr>", desc = "Delete all marks" },
+
+    -- Terminals that doesn't support sequences with non-asci. For instance Tmux
+    ["<C-\\>"] = { "<cmd>ToggleTerm<cr>" }, -- solves <C-'>
+
   },
   t = {
-    ["<C-l>"] = {"<cmd>TermExec cmd='clear'<cr>", desc = "Clear ToggleTerm Terminal"}
+    ["<C-l>"] = {"<cmd>TermExec cmd='clear'<cr>", desc = "Clear ToggleTerm Terminal"},
+
+    -- Terminals that doesn't support sequences with non-asci. For instance Tmux
+    ["<C-\\>"] = { "<cmd>ToggleTerm<cr>" }, -- solves <C-'>
   },
 }
