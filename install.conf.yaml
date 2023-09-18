@@ -12,6 +12,10 @@
       create: true
       path: config/kitty
       force: true
+    ~/.config/tmux:
+      create: true
+      path: config/tmux
+      force: true
     ~/.config/nvim/lua/user:
       create: true
       path: config/astronvim
