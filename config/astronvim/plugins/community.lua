@@ -8,6 +8,6 @@ return {
   -- { import = "astrocommunity.motion.harpoon" },
   { import = "astrocommunity.motion.marks-nvim" },
   { import = "astrocommunity.project.nvim-spectre" },
-  { import = "astrocommunity.utility.transparent-nvim" },
+  { import = "astrocommunity.color.transparent-nvim" },
   { import = "astrocommunity.editing-support.telescope-undo-nvim" },
 }
