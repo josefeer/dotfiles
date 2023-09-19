@@ -12,9 +12,9 @@
       create: true
       path: config/kitty
       force: true
-    ~/.config/tmux:
+    ~/.config/tmux/tmux.conf:
       create: true
-      path: config/tmux
+      path: config/tmux/tmux.conf
       force: true
     ~/.config/nvim/lua/user:
       create: true
