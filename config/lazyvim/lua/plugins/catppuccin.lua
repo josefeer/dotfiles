@@ -1,0 +1,4 @@
+return {
+  "catppuccin",
+  enabled = false,
+}
