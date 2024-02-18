@@ -41,3 +41,8 @@ vim.keymap.set("t", "<C-l>", "clear<cr>")
 -- Toggle previous & next buffers stored within Harpoon list
 -- vim.keymap.set("n", "<C-S-P>", function() harpoon:list():prev() end)
 -- vim.keymap.set("n", "<C-S-N>", function() harpoon:list():next() end)
+
+-- Prevent copying to clipboard when deleting
+vim.keymap.set("n", "d", '"_d')
+vim.keymap.set("n", "dd", '"_dd')
+vim.keymap.set("n", "x", '"_x')

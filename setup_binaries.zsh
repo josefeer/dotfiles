@@ -22,5 +22,8 @@ echo "Installing Binaries in $OS (TODO)"
 # - gh (github CLI)
 # - node
 # - python
+# - fzf
+# - zoxide
 # TODO repositories to clone
 # - astronvim: https://github.com/AstroNvim/AstroNvim
+# - lazyvim
