@@ -2,6 +2,7 @@
 
 alias ls='ls --color=auto' 
 alias lsa='ls -lhAF --color=auto' 
+alias myip='curl -s ifconfig.me | cut -c 1-'
 
 # Custom Prompts
 
@@ -14,6 +15,7 @@ alias nvim-astro="NVIM_APPNAME=AstroNvim nvim"
 
 # zoxide (improved cd)
 eval "$(zoxide init --cmd cd zsh )"
+
 
 # References
 # Classic oh-my-zsh prompt: https://stackoverflow.com/questions/68168011/how-to-alter-the-configuration-of-robbyrussel-theme-in-oh-my-zsh-so-that-the-arr
