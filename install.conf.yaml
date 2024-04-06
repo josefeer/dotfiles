@@ -11,10 +11,6 @@
       create: true
       path: config/tmux/tmux.conf
       force: true
-    ~/.config/AstroNvim/lua/user:
-      create: true
-      path: config/astronvim
-      force: true
     ~/.config/LazyVim/lua:
       create: true
       path: config/lazyvim/lua
