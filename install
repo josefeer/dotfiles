@@ -2,7 +2,13 @@
 
 set -e
 
+OS=$(uname -s)
 CONFIG="install.conf.yaml"
+
+if [[ "$OS" == "Darwin" ]]; then
+	CONFIG="install_macos.conf.yaml"
+fi
+
 DOTBOT_DIR="dotbot"
 
 DOTBOT_BIN="bin/dotbot"

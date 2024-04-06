@@ -1,0 +1,24 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.zshrc: 
+    ~/.gitconfig: 
+    ~/.yabairc: 
+    ~/.skhdrc: 
+      force: true
+    ~/.config/kitty:
+      create: true
+      path: config/kitty
+      force: true
+
+- create:
+    - ~/Developer
+
+- shell:
+  - command: ./setup_binaries_macos.zsh
+    stdout: true
+    stderr: true

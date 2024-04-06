@@ -6,7 +6,12 @@ alias myip='curl -s ifconfig.me | cut -c 1-'
 
 # Custom Prompts
 
+OS=$(uname -s)
 PROMPT='%F{blue}➜ %F{cyan}%~ %F{white}'
+
+if [[  "$OS" == "Darwin" ]]; then
+	PROMPT='%F{green}➜ %F{cyan}%~ %F{white}'
+fi
 
 # Neovim Distros
 

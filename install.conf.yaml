@@ -7,11 +7,6 @@
 - link:
     ~/.zshrc: 
     ~/.gitconfig: 
-      force: true
-    ~/.config/kitty:
-      create: true
-      path: config/kitty
-      force: true
     ~/.config/tmux/tmux.conf:
       create: true
       path: config/tmux/tmux.conf
