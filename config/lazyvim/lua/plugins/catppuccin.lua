@@ -1,4 +1,0 @@
-return {
-  "catppuccin",
-  enabled = false,
-}

@@ -10,3 +10,17 @@ vim.diagnostic.config({
 
 -- Disable Tabline on Top, we are using lualine instead
 vim.opt.showtabline = 0
+
+-- Disable highlighting of the current line
+vim.opt.cursorline = false
+
+-- Disable Autoformat
+vim.g.autoformat = false
+
+-- Disable unused providers
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_ruby_provider = 0
+vim.g.python3_host_prog = '/home/jose/.nvim-venv/bin/python3'
+
+-- Sync with system clipboard
+vim.opt.clipboard = "unnamedplus"
