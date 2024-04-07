@@ -1,0 +1,25 @@
+alias nvim-lazy="NVIM_APPNAME=LazyVim nvim"
+alias nvim-astro="NVIM_APPNAME=AstroNvim nvim"
+
+alias myip='curl -s ifconfig.me | cut -c 1-'
+
+alias ssn="sudo shutdown now"
+alias sr="sudo reboot"
+
+alias ..="cd .."
+alias ...="cd ../.."
+
+alias psa="ps auxf"
+alias psgrep="ps aux | grep -v grep | grep -i -e VSZ -e"
+alias psmem="ps auxf | sort -nr -k 4"
+alias pscpu="ps auxf | sort -nr -k 3"
+
+alias icat="kitten icat"
+
+if command -v eza >/dev/null 2>&1; then
+  alias ls='eza'
+  alias lsa='eza -lah'
+else
+  alias ls='ls --color=auto'
+  alias lsa='ls -lha --color=auto'
+fi

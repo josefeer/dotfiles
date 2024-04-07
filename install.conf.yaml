@@ -5,7 +5,9 @@
 - clean: ['~']
 
 - link:
+    ~/.aliases: 
     ~/.zshrc: 
+    ~/.zshenv: 
     ~/.gitconfig: 
     ~/.config/tmux/tmux.conf:
       create: true
@@ -18,6 +20,10 @@
     ~/.config/lazygit/config.yml:
       create: true
       path: config/lazygit/config.yml
+      force: true
+    ~/.config/zsh/plugins:
+      create: true
+      path: config/zsh/plugins
       force: true
 
 - create:

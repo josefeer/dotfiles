@@ -5,7 +5,9 @@
 - clean: ['~']
 
 - link:
+    ~/.aliases: 
     ~/.zshrc: 
+    ~/.zshenv: 
     ~/.gitconfig: 
     ~/.yabairc: 
     ~/.skhdrc: 
@@ -13,6 +15,10 @@
     ~/.config/kitty:
       create: true
       path: config/kitty
+      force: true
+    ~/.config/zsh/plugins:
+      create: true
+      path: config/zsh/plugins
       force: true
 
 - create:
