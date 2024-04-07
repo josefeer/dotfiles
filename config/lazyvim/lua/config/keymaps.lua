@@ -58,8 +58,3 @@ vim.keymap.set("n", "<leader>h2", function() harpoon:list():select(2) end, { des
 vim.keymap.set("n", "<leader>h3", function() harpoon:list():select(3) end, { desc = "Harpoon Buffer 3" })
 vim.keymap.set("n", "<leader>h4", function() harpoon:list():select(4) end, { desc = "Harpoon Buffer 4" })
 vim.keymap.set("n", "<leader>h5", function() harpoon:list():select(5) end, { desc = "Harpoon Buffer 5" })
-
--- Prevent copying to clipboard when deleting
-vim.keymap.set("n", "d", '"_d')
-vim.keymap.set("n", "dd", '"_dd')
-vim.keymap.set("n", "x", '"_x')
