@@ -7,7 +7,6 @@
 - link:
     ~/.aliases: 
     ~/.zshrc: 
-    ~/.zshenv: 
     ~/.gitconfig: 
     ~/.config/tmux/tmux.conf:
       create: true
