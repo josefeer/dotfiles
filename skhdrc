@@ -25,9 +25,17 @@ alt - f : yabai -m window --toggle zoom-fullscreen
 # toggle padding and gap
 alt - g : yabai -m space --toggle padding; yabai -m space --toggle gap
 
-# float / unfloat window and center on screen
-alt - t : yabai -m window --toggle float;\
-          yabai -m window --grid 6:6:1:1:4:4 # laptop screen
+# float / unfloat window and force center on screen.
+alt - t : yabai -m window --toggle float; \
+          yabai -m window --grid 6:6:1:1:4:4; \
+          id=$(yabai -m query --windows --window | jq -r '.id'); \
+          actual_width=$(yabai -m query --windows --window | jq -r '.frame.w'); \
+          actual_height=$(yabai -m query --windows --window | jq -r '.frame.h'); \
+          sw=$(yabai -m query --displays --display | jq -r '.frame.w'); \
+          sh=$(yabai -m query --displays --display | jq -r '.frame.h'); \
+          x=$(( (sw - actual_width) / 2 )); \
+          y=$(( (sh - actual_height) / 2 )); \
+          yabai -m window $id --move abs:$x:$y
 
 # balance size of windows
 shift + alt - 0 : yabai -m space --balance
