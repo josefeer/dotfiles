@@ -29,9 +29,6 @@ alt - g : yabai -m space --toggle padding; yabai -m space --toggle gap
 alt - t : yabai -m window --toggle float;\
           yabai -m window --grid 6:6:1:1:4:4 # laptop screen
 
-# toggle window split type
-alt - e : yabai -m window --toggle split
-
 # balance size of windows
 shift + alt - 0 : yabai -m space --balance
 
