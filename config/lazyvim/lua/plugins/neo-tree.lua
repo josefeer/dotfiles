@@ -2,6 +2,7 @@ local Util = require("lazyvim.util")
 
 return {
   "nvim-neo-tree/neo-tree.nvim",
+  enabled = false,
   keys = {
     -- disable original keymaps
     { "<leader>fe", false },

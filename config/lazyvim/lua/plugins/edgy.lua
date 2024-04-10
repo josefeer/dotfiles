@@ -62,8 +62,8 @@ return {
       },
       left = {
         {
-          title = "Neo-Tree",
-          ft = "neo-tree",
+          title = "Nvim-Tree",
+          ft = "NvimTree",
           pinned = true,
           open = function()
             vim.api.nvim_input("<esc><space>e")
