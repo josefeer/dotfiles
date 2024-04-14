@@ -15,9 +15,9 @@
       create: true
       path: config/kitty
       force: true
-    ~/.config/zsh/plugins:
+    ~/.config/zsh:
       create: true
-      path: config/zsh/plugins
+      path: config/zsh
       force: true
 
 - create:

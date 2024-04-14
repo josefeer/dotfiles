@@ -23,3 +23,5 @@ else
   alias ls='ls --color=auto'
   alias lsa='ls -lha --color=auto'
 fi
+
+alias prlrun="~/.config/zsh/scripts/prlrun.zsh"
