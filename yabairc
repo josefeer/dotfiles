@@ -29,5 +29,16 @@ yabai -m config left_padding                 10
 yabai -m config right_padding                10
 yabai -m config window_gap                   10
 
-# apps to not manage (ignore)
-# yabai -m rule --add app="^System Settings$" manage=off
+# apps to not manage when they start
+yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^Finder$" manage=off
+
+# apps fixed to a space
+yabai -m rule --add app="^kitty$" space=1
+yabai -m rule --add app="^Google Chrome$" space=2
+yabai -m rule --add app="^Firefox" space=2
+yabai -m rule --add app="^Arc$" space=3
+yabai -m rule --add app="^Microsoft Teams" space=4
+yabai -m rule --add app="^Slack$" space=4
+yabai -m rule --add app="^Todoist$" space=5
+yabai -m rule --add app="^Spotify$" space=5
