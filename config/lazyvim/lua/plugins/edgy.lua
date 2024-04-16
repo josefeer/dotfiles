@@ -30,7 +30,7 @@ return {
     local opts = {
       options = {
         left = { size = 40 },
-        bottom = { size = 20 }
+        bottom = { size = 21 }
       },
       animate = {
         enabled = false
@@ -38,7 +38,6 @@ return {
       bottom = {
         {
           ft = "noice",
-          size = { height = 0.4 },
           filter = function(buf, win)
             return vim.api.nvim_win_get_config(win).relative == ""
           end,
@@ -47,7 +46,6 @@ return {
         { ft = "qf", title = "QuickFix" },
         {
           ft = "help",
-          size = { height = 20 },
           -- don't open help files in edgy that we're editing
           filter = function(buf)
             return vim.bo[buf].buftype == "help"
