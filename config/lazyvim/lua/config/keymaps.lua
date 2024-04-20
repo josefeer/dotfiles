@@ -19,12 +19,17 @@ vim.keymap.del("n", "<S-h>")
 vim.keymap.del("n", "<S-l>")
 
 -- Primeagen Keymaps
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "<C-d>", "<C-d>zz^")
+vim.keymap.set("n", "<C-u>", "<C-u>zz^")
 
 -- My Keymaps
 vim.keymap.set("n", "<C-o>", "<C-o>zz")
 vim.keymap.set("n", "<C-i>", "<C-i>zz")
+vim.keymap.set("n", "*", "*zz")
+vim.keymap.set("n", "n", "nzz")
+vim.keymap.set("n", "<S-n>", "<S-n>zz")
+vim.keymap.set("n", "<C-e>", "<C-e>j^")
+vim.keymap.set("n", "<C-y>", "<C-y>k^")
 
 -- My Keymaps for LazyTerm
 local Util = require("lazyvim.util")
@@ -58,3 +63,4 @@ vim.keymap.set("n", "<leader>h2", function() harpoon:list():select(2) end, { des
 vim.keymap.set("n", "<leader>h3", function() harpoon:list():select(3) end, { desc = "Harpoon Buffer 3" })
 vim.keymap.set("n", "<leader>h4", function() harpoon:list():select(4) end, { desc = "Harpoon Buffer 4" })
 vim.keymap.set("n", "<leader>h5", function() harpoon:list():select(5) end, { desc = "Harpoon Buffer 5" })
+vim.keymap.set("n", "<leader>h6", function() harpoon:list():select(6) end, { desc = "Harpoon Buffer 6" })
