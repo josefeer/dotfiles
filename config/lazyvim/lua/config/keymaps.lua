@@ -22,12 +22,17 @@ vim.keymap.del("n", "<S-l>")
 vim.keymap.set("n", "<C-d>", "<C-d>zz^")
 vim.keymap.set("n", "<C-u>", "<C-u>zz^")
 
--- My Keymaps
+-- My keymaps for cursor always centered
 vim.keymap.set("n", "<C-o>", "<C-o>zz")
 vim.keymap.set("n", "<C-i>", "<C-i>zz")
 vim.keymap.set("n", "*", "*zz")
 vim.keymap.set("n", "n", "nzz")
 vim.keymap.set("n", "<S-n>", "<S-n>zz")
+vim.keymap.set("n", "[g", "[gzz")
+vim.keymap.set("n", "]g", "]gzz")
+vim.keymap.set("n", "[f", "[fzz")
+vim.keymap.set("n", "]f", "]fzz")
+
 vim.keymap.set("n", "<C-e>", "<C-e>j^")
 vim.keymap.set("n", "<C-y>", "<C-y>k^")
 
