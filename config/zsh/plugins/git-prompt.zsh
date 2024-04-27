@@ -39,10 +39,6 @@ prompt_git_status() {
     STATUS="$ZSH_THEME_GIT_PROMPT_DELETED$STATUS"
   fi
 
-  if $(command git rev-parse --verify refs/stash >/dev/null 2>&1); then
-    STATUS="$ZSH_THEME_GIT_PROMPT_STASHED$STATUS"
-  fi
-
   if $(echo "$INDEX" | grep '^UU ' &> /dev/null); then
     STATUS="$ZSH_THEME_GIT_PROMPT_UNMERGED$STATUS"
   fi
@@ -92,7 +88,6 @@ prompt_git_setup() {
     ZSH_THEME_GIT_PROMPT_RENAMED="%F{magenta}➜%f "
     ZSH_THEME_GIT_PROMPT_UNMERGED="%F{yellow}═%f "
     ZSH_THEME_GIT_PROMPT_UNTRACKED="%F{white}%f "
-    ZSH_THEME_GIT_PROMPT_STASHED="%B%F{red}%f%b "
     ZSH_THEME_GIT_PROMPT_BEHIND="%B%F{red}%f%b "
     ZSH_THEME_GIT_PROMPT_AHEAD="%B%F{green}%f%b "
 
