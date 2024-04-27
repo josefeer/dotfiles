@@ -6,25 +6,22 @@ prompt_git_status() {
   STATUS=""
 
   if $(echo "$INDEX" | grep '^ M ' &> /dev/null); then
-    STATUS="$ZSH_THEME_GIT_PROMPT_MODIFIED$STATUS"
+    STATUS="$GIT_PROMPT_MODIFIED$STATUS"
   elif $(echo "$INDEX" | grep '^AM ' &> /dev/null); then
-    STATUS="$ZSH_THEME_GIT_PROMPT_MODIFIED$STATUS"
+    STATUS="$GIT_PROMPT_MODIFIED$STATUS"
   elif $(echo "$INDEX" | grep '^MM ' &> /dev/null); then
-    STATUS="$ZSH_THEME_GIT_PROMPT_MODIFIED$STATUS"
+    STATUS="$GIT_PROMPT_MODIFIED$STATUS"
   elif $(echo "$INDEX" | grep '^ T ' &> /dev/null); then
-    STATUS="$ZSH_THEME_GIT_PROMPT_MODIFIED$STATUS"
+    STATUS="$GIT_PROMPT_MODIFIED$STATUS"
   fi
-
 
   if $(echo "$INDEX" | grep '^## [^ ]\+ .*ahead' &> /dev/null); then
-    STATUS="$STATUS$ZSH_THEME_GIT_PROMPT_AHEAD"
+    STATUS="$STATUS$GIT_PROMPT_AHEAD"
   fi
-
 
   if $(echo "$INDEX" | grep '^## [^ ]\+ .*behind' &> /dev/null); then
-    STATUS="$STATUS$ZSH_THEME_GIT_PROMPT_BEHIND"
+    STATUS="$STATUS$GIT_PROMPT_BEHIND"
   fi
-
 
   if [[ ! -z "$STATUS" ]]; then
     echo "$STATUS "
@@ -45,18 +42,18 @@ prompt_git_info() {
       branch_color="red"
     fi
 
-    [ ! -z "$vcs_info_msg_0_" ] && echo "$ZSH_THEME_GIT_PROMPT_PREFIX%F{$branch_color}$vcs_info_msg_0_%f$ZSH_THEME_GIT_PROMPT_SUFFIX "
+    [ ! -z "$vcs_info_msg_0_" ] && echo "$GIT_PROMPT_PREFIX%F{$branch_color}$vcs_info_msg_0_%f$GIT_PROMPT_SUFFIX "
 }
 
 prompt_git_setup() {
     autoload -Uz add-zsh-hook
 
-    ZSH_THEME_GIT_PROMPT_PREFIX="%F{blue}git:("
-    ZSH_THEME_GIT_PROMPT_SUFFIX="%F{blue})%f"
+    GIT_PROMPT_PREFIX="%F{blue}git:("
+    GIT_PROMPT_SUFFIX="%F{blue})%f"
 
-    ZSH_THEME_GIT_PROMPT_MODIFIED="%F{yellow}✗%f"
-    ZSH_THEME_GIT_PROMPT_BEHIND="%F{red}%f"
-    ZSH_THEME_GIT_PROMPT_AHEAD="%F{green}%f"
+    GIT_PROMPT_MODIFIED="%F{yellow}✗%f"
+    GIT_PROMPT_BEHIND="%F{red}%f"
+    GIT_PROMPT_AHEAD="%F{green}%f"
 
     prompt_git_branch
 }
