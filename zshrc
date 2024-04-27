@@ -9,10 +9,10 @@ autoload -U compinit; compinit
 
 # Custom Prompt
 OS=$(uname -s)
-PROMPT='%F{blue}➜ %F{cyan}%~ %F{white}$(prompt_git_info)'
+PROMPT='%F{blue}➜ %F{cyan}%~ %F{white}$(prompt_git_info)$(prompt_git_status)'
 
 if [[  "$OS" == "Darwin" ]]; then
-  PROMPT='%F{green}➜ %F{cyan}%~ %F{white}$(prompt_git_info)'
+  PROMPT='%F{green}➜ %F{cyan}%~ %F{white}$(prompt_git_info)$(prompt_git_status)'
 fi
 
 # zoxide (improved cd)
