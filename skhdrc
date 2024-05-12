@@ -37,6 +37,14 @@ alt - t : yabai -m window --toggle float; \
           y=$(( (sh - actual_height) / 2 )); \
           yabai -m window $id --move abs:$x:$y
 
+# toggle extra padding for ultra-wide display
+alt - w : current_space=$(yabai -m query --spaces | jq '.[] | select(."is-visible" == true) | .index'); \
+	if [[ $(yabai -m config --space $current_space right_padding) -eq 10 ]]; then; \
+		yabai -m space --padding abs:10:10:450:450; \
+	else; \
+		yabai -m space --padding abs:10:10:10:10; \
+	fi
+
 # balance size of windows
 shift + alt - 0 : yabai -m space --balance
 
