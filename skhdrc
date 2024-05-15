@@ -46,7 +46,7 @@ alt - w : current_space=$(yabai -m query --spaces | jq '.[] | select(."is-visibl
 	fi
 
 # balance size of windows
-shift + alt - 0 : yabai -m space --balance
+alt - b : yabai -m space --balance
 
 # move window and focus desktop
 shift + alt - 1 : yabai -m window --space 1; yabai -m space --focus 1
