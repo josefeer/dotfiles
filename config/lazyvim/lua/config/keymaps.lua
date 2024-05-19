@@ -11,14 +11,7 @@ vim.keymap.del("n", "<leader>|")
 vim.keymap.del("n", "<leader>l")
 vim.keymap.del("n", "<leader>L")
 
-vim.keymap.del("n", "<leader>fb")
-vim.keymap.del("n", "<leader>fc")
-vim.keymap.del("n", "<leader>ff")
-vim.keymap.del("n", "<leader>fF")
-vim.keymap.del("n", "<leader>fg")
 vim.keymap.del("n", "<leader>fn")
-vim.keymap.del("n", "<leader>fr")
-vim.keymap.del("n", "<leader>fR")
 vim.keymap.del("n", "<leader>fT")
 vim.keymap.del("n", "<leader>ft")
 
@@ -26,11 +19,6 @@ vim.keymap.del("n", "<leader>K")
 
 vim.keymap.del("n", "<leader>gG")
 vim.keymap.del("n", "<leader>bb")
-
-vim.keymap.del("n", "<leader>sG")
-vim.keymap.del("n", "<leader>sR")
-vim.keymap.del("n", "<leader>sS")
-vim.keymap.del("n", "<leader>sW")
 
 vim.keymap.del("n", "<leader>uL")
 vim.keymap.del("n", "<leader>ul")
@@ -60,7 +48,8 @@ vim.keymap.set("n", "<C-y>", "<C-y>k^")
 -- My which-key Keymaps
 vim.keymap.set("n", "<leader>sf", LazyVim.telescope("files"), { desc = "Files" })
 vim.keymap.set("n", "<leader>sr", "<cmd>Telescope oldfiles<cr>", { desc = "Recent" })
-
+vim.keymap.set("n", "<leader>sb", "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>", { desc = "Buffers" })
+vim.keymap.set("n", "<leader>ba", "<cmd>bd|e#", { desc = "Delete All Buffers but Current" })
 
 -- My Keymaps for LazyTerm
 local Util = require("lazyvim.util")
@@ -85,12 +74,12 @@ harpoon:setup()
 -- REQUIRED
 
 -- stylua: ignore start
-vim.keymap.set("n", "<leader>h", function () end, { desc = "Harpoon" })
-vim.keymap.set("n", "<leader>hn", function() harpoon:list():add() end, { desc = "Harpoon Add New" })
-vim.keymap.set("n", "<leader>hl", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, { desc = "Harpoon List" })
+vim.keymap.set("n", "<leader>j", function () end, { desc = "Harpoon" })
+vim.keymap.set("n", "<leader>ja", function() harpoon:list():add() end, { desc = "Harpoon Add New" })
+vim.keymap.set("n", "<leader>jl", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, { desc = "Harpoon List" })
 
-vim.keymap.set("n", "<leader>ha", function() harpoon:list():select(1) end, { desc = "Harpoon Buffer 1" })
-vim.keymap.set("n", "<leader>hs", function() harpoon:list():select(2) end, { desc = "Harpoon Buffer 3" })
-vim.keymap.set("n", "<leader>hd", function() harpoon:list():select(3) end, { desc = "Harpoon Buffer 3" })
-vim.keymap.set("n", "<leader>hf", function() harpoon:list():select(4) end, { desc = "Harpoon Buffer 4" })
-vim.keymap.set("n", "<leader>hg", function() harpoon:list():select(5) end, { desc = "Harpoon Buffer 5" })
+vim.keymap.set("n", "<leader>jq", function() harpoon:list():select(1) end, { desc = "Harpoon Buffer 1" })
+vim.keymap.set("n", "<leader>jw", function() harpoon:list():select(2) end, { desc = "Harpoon Buffer 3" })
+vim.keymap.set("n", "<leader>je", function() harpoon:list():select(3) end, { desc = "Harpoon Buffer 3" })
+vim.keymap.set("n", "<leader>jr", function() harpoon:list():select(4) end, { desc = "Harpoon Buffer 4" })
+vim.keymap.set("n", "<leader>jt", function() harpoon:list():select(5) end, { desc = "Harpoon Buffer 5" })
