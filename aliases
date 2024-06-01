@@ -1,5 +1,4 @@
 alias nvim-lazy="NVIM_APPNAME=LazyVim nvim"
-alias nvim-astro="NVIM_APPNAME=AstroNvim nvim"
 
 alias myip='curl -s ifconfig.me | cut -c 1-'
 

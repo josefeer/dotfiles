@@ -16,6 +16,7 @@ vim.keymap.del("n", "<leader>fT")
 vim.keymap.del("n", "<leader>ft")
 
 vim.keymap.del("n", "<leader>K")
+vim.keymap.del("n", "<leader>m")
 
 vim.keymap.del("n", "<leader>gG")
 vim.keymap.del("n", "<leader>bb")
@@ -37,10 +38,6 @@ vim.keymap.set("n", "<C-i>", "<C-i>zz")
 vim.keymap.set("n", "*", "*zz")
 vim.keymap.set("n", "n", "nzz")
 vim.keymap.set("n", "<S-n>", "<S-n>zz")
-vim.keymap.set("n", "[g", "[gzz")
-vim.keymap.set("n", "]g", "]gzz")
-vim.keymap.set("n", "[f", "[fzz")
-vim.keymap.set("n", "]f", "]fzz")
 
 vim.keymap.set("n", "<C-e>", "<C-e>j^")
 vim.keymap.set("n", "<C-y>", "<C-y>k^")

@@ -24,6 +24,11 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 # Enabling X11 forwarding
 export XAUTHORITY=$HOME/.Xauthority
 
+# NodeJS stuff
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 # References
 # Classic oh-my-zsh prompt: https://stackoverflow.com/questions/68168011/how-to-alter-the-configuration-of-robbyrussel-theme-in-oh-my-zsh-so-that-the-arr
 # Basic Color References: https://stackoverflow.com/questions/689765/how-can-i-change-the-color-of-my-prompt-in-zsh-different-from-normal-text
