@@ -16,7 +16,6 @@ vim.keymap.del("n", "<leader>fT")
 vim.keymap.del("n", "<leader>ft")
 
 vim.keymap.del("n", "<leader>K")
-vim.keymap.del("n", "<leader>m")
 
 vim.keymap.del("n", "<leader>gG")
 vim.keymap.del("n", "<leader>bb")
@@ -43,7 +42,7 @@ vim.keymap.set("n", "<C-e>", "<C-e>j^")
 vim.keymap.set("n", "<C-y>", "<C-y>k^")
 
 -- My which-key Keymaps
-vim.keymap.set("n", "<leader>sf", LazyVim.telescope("files"), { desc = "Files" })
+vim.keymap.set("n", "<leader>sf", LazyVim.pick("files"), { desc = "Files" })
 vim.keymap.set("n", "<leader>sr", "<cmd>Telescope oldfiles<cr>", { desc = "Recent" })
 vim.keymap.set("n", "<leader>sb", "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>", { desc = "Buffers" })
 vim.keymap.set("n", "<leader>ba", "<cmd>bd|e#", { desc = "Delete All Buffers but Current" })

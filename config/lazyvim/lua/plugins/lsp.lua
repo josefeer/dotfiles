@@ -11,6 +11,20 @@ return {
           },
         },
       },
+      yamlls = {
+        settings = {
+          yaml = {
+            customTags = {
+              "!Ref",
+              "!Sub",
+              "!If",
+              "!If sequence",
+              "!Equals",
+              "!Equals sequence"
+            }
+          }
+        }
+      }
     },
   },
 }
