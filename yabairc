@@ -51,3 +51,6 @@ yabai -m rule --add app="^Microsoft Teams" space=6
 yabai -m rule --add app="^Slack" space=6
 yabai -m rule --add app="^Todoist$" space=7
 yabai -m rule --add app="^Spotify$" space=7
+
+# https://github.com/FelixKratz/JankyBorders
+borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0 &
