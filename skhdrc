@@ -60,6 +60,7 @@ shift + alt - 6 : yabai -m window --space 6; yabai -m space --focus 6
 shift + alt - 7 : yabai -m window --space 7; yabai -m space --focus 7
 shift + alt - 8 : yabai -m window --space 8; yabai -m space --focus 8
 shift + alt - 9 : yabai -m window --space 9; yabai -m space --focus 9
+shift + alt - 0 : yabai -m window --space 9; yabai -m space --focus 10
 
 # resizing
 shift + alt - y : yabai -m window --resize right:-175:0 2> /dev/null || yabai -m window --resize left:-175:0 2> /dev/null
@@ -68,6 +69,7 @@ shift + alt - o : yabai -m window --resize right:175:0 2> /dev/null || yabai -m 
 # apps shortcuts for macos
 # https://github.com/koekeishiya/skhd/issues/1
 hyper - a : open -a 'Arc'
+hyper - b : open -a 'Boop'
 hyper - c : open -a 'Google Chrome'
 hyper - e : open -a 'Microsoft Teams'
 hyper - f : open -a 'Finder'
@@ -80,6 +82,5 @@ hyper - s : open -a 'Slack'
 hyper - t : open -a 'Todoist'
 hyper - v : open -a 'Preview'
 hyper - w : open -a 'Parallels Desktop'
-hyper - y : open -a 'DevToys'
 hyper - x : open -a 'Firefox Developer Edition'
 hyper - z : open -a 'zoom.us'
