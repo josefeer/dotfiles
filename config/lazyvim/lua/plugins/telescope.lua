@@ -20,4 +20,11 @@ return {
     { "<leader>sW", false },
     { "<leader>sb", false }
   },
+  pickers = {
+    live_grep = {
+      additional_args = function(opts)
+        return {"--ignore-case"}  -- Make the live_grep case insensitive
+      end
+    },
+  },
 }

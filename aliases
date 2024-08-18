@@ -24,3 +24,5 @@ else
 fi
 
 alias prlrun="~/.config/zsh/scripts/prlrun.zsh"
+
+alias nz="nvim-lazy"

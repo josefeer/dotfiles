@@ -70,12 +70,12 @@ harpoon:setup()
 -- REQUIRED
 
 -- stylua: ignore start
-vim.keymap.set("n", "<leader>j", function () end, { desc = "Harpoon" })
-vim.keymap.set("n", "<leader>ja", function() harpoon:list():add() end, { desc = "Harpoon Add New" })
-vim.keymap.set("n", "<leader>jl", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, { desc = "Harpoon List" })
+vim.keymap.set("n", "<leader>n", function () end, { desc = "Harpoon" })
+vim.keymap.set("n", "<leader>nn", function() harpoon:list():add() end, { desc = "Harpoon Add New" })
+vim.keymap.set("n", "<leader>nl", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, { desc = "Harpoon List" })
 
-vim.keymap.set("n", "<leader>jq", function() harpoon:list():select(1) end, { desc = "Harpoon Buffer 1" })
-vim.keymap.set("n", "<leader>jw", function() harpoon:list():select(2) end, { desc = "Harpoon Buffer 3" })
-vim.keymap.set("n", "<leader>je", function() harpoon:list():select(3) end, { desc = "Harpoon Buffer 3" })
-vim.keymap.set("n", "<leader>jr", function() harpoon:list():select(4) end, { desc = "Harpoon Buffer 4" })
-vim.keymap.set("n", "<leader>jt", function() harpoon:list():select(5) end, { desc = "Harpoon Buffer 5" })
+vim.keymap.set("n", "<leader>na", function() harpoon:list():select(1) end, { desc = "Harpoon Buffer 1" })
+vim.keymap.set("n", "<leader>nr", function() harpoon:list():select(2) end, { desc = "Harpoon Buffer 3" })
+vim.keymap.set("n", "<leader>ns", function() harpoon:list():select(3) end, { desc = "Harpoon Buffer 3" })
+vim.keymap.set("n", "<leader>nt", function() harpoon:list():select(4) end, { desc = "Harpoon Buffer 4" })
+vim.keymap.set("n", "<leader>ng", function() harpoon:list():select(5) end, { desc = "Harpoon Buffer 5" })
