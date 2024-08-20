@@ -24,9 +24,6 @@ vim.keymap.del("n", "<leader>uL")
 vim.keymap.del("n", "<leader>ul")
 vim.keymap.del("n", "<leader>us")
 
-vim.keymap.del("n", "<leader>fe")
-vim.keymap.del("n", "<leader>fE")
-
 vim.keymap.del("n", "<S-h>")
 vim.keymap.del("n", "<S-l>")
 
