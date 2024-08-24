@@ -44,13 +44,14 @@ yabai -m rule --add app="^DBeaver$" space=3
 yabai -m rule --add app="^Navicat" space=3
 yabai -m rule --add app="^Postman" space=4
 yabai -m rule --add app="^Boop" space=4
-yabai -m rule --add app="^Arc$" space=7
-yabai -m rule --add app="^Notion$" space=8
-yabai -m rule --add app="^Slack" space=9
-yabai -m rule --add app="^Microsoft Teams" space=9
-yabai -m rule --add app="^Spotify$" space=10
-yabai -m rule --add app="^Fantastical$" space=10
-yabai -m rule --add app="^Todoist$" space=10
+yabai -m rule --add app="^Arc$" space=5
+yabai -m rule --add app="^Zen Browser$" space=5
+yabai -m rule --add app="^Notes$" space=6
+yabai -m rule --add app="^Slack" space=7
+yabai -m rule --add app="^Microsoft Teams" space=7
+yabai -m rule --add app="^Spotify$" space=8
+yabai -m rule --add app="^Fantastical$" space=8
+yabai -m rule --add app="^Todoist$" space=8
 
 # https://github.com/FelixKratz/JankyBorders
 borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0 &
