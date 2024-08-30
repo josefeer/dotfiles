@@ -42,9 +42,14 @@ vim.keymap.set("n", "<C-e>", "<C-e>j^")
 vim.keymap.set("n", "<C-y>", "<C-y>k^")
 
 -- My which-key Keymaps
-vim.keymap.set("n", "<leader>sf", LazyVim.pick("files"), { desc = "Files" })
-vim.keymap.set("n", "<leader>sr", "<cmd>Telescope oldfiles<cr>", { desc = "Recent" })
-vim.keymap.set("n", "<leader>sb", "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>", { desc = "Buffers" })
+local wk = require("which-key")
+wk.add({
+  { "<leader>sf", LazyVim.pick("files"), icon = "", desc = "Files" },
+  { "<leader>sO", "<cmd>Telescope oldfiles<cr>", icon = "", desc = "Oldfiles" },
+  { "<leader>sb", "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>", icon = "", desc = "Buffers" },
+  { "<leader>sr", "<cmd>Telescope pickers<cr>", icon = "", desc = "Recent Search" },
+})
+
 vim.keymap.set("n", "<leader>ba", "<cmd>bd|e#", { desc = "Delete All Buffers but Current" })
 
 -- My Keymaps for LazyTerm
@@ -69,13 +74,13 @@ local harpoon = require("harpoon")
 harpoon:setup()
 -- REQUIRED
 
--- stylua: ignore start
-vim.keymap.set("n", "<leader>n", function () end, { desc = "Harpoon" })
-vim.keymap.set("n", "<leader>nn", function() harpoon:list():add() end, { desc = "Harpoon Add New" })
-vim.keymap.set("n", "<leader>nl", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, { desc = "Harpoon List" })
-
-vim.keymap.set("n", "<leader>na", function() harpoon:list():select(1) end, { desc = "Harpoon Buffer 1" })
-vim.keymap.set("n", "<leader>nr", function() harpoon:list():select(2) end, { desc = "Harpoon Buffer 3" })
-vim.keymap.set("n", "<leader>ns", function() harpoon:list():select(3) end, { desc = "Harpoon Buffer 3" })
-vim.keymap.set("n", "<leader>nt", function() harpoon:list():select(4) end, { desc = "Harpoon Buffer 4" })
-vim.keymap.set("n", "<leader>ng", function() harpoon:list():select(5) end, { desc = "Harpoon Buffer 5" })
+wk.add({
+  { "<leader>n", icon = "󱐋", group = "harpoon" },
+  { "<leader>nn", function() harpoon:list():add() end,icon = "󱐋", desc = "harpoon add new" },
+  { "<leader>nl", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, icon = "󱐋", desc = "harpoon list" },
+  { "<leader>na", function() harpoon:list():select(1) end, icon = "󱐋", desc = "harpoon bookmark 1" },
+  { "<leader>nr", function() harpoon:list():select(2) end, icon = "󱐋", desc = "harpoon bookmark 2" },
+  { "<leader>ns", function() harpoon:list():select(3) end, icon = "󱐋", desc = "harpoon bookmark 3" },
+  { "<leader>nt", function() harpoon:list():select(4) end, icon = "󱐋", desc = "harpoon bookmark 4" },
+  { "<leader>ng", function() harpoon:list():select(5) end, icon = "󱐋", desc = "harpoon bookmark 5" },
+})

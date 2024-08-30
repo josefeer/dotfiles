@@ -18,7 +18,10 @@ return {
     { "<leader>sR", false },
     { "<leader>sS", false },
     { "<leader>sW", false },
-    { "<leader>sb", false }
+    { "<leader>sb", false },
+    { "<leader>sH", false },
+    { "<leader>sM", false },
+    { "<leader>sl", false },
   },
   pickers = {
     live_grep = {
