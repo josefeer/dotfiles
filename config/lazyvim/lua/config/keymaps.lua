@@ -84,3 +84,30 @@ wk.add({
   { "<leader>nt", function() harpoon:list():select(4) end, icon = "󱐋", desc = "harpoon bookmark 4" },
   { "<leader>ng", function() harpoon:list():select(5) end, icon = "󱐋", desc = "harpoon bookmark 5" },
 })
+
+-- Octo Keymaps
+wk.add(
+  {
+    { "<leader>o", icon = "", group = "Octo" },
+    { "<leader>ol", "<cmd>Octo pr list<CR>", icon = "", desc = "List PRs" },
+    { "<leader>os", "<cmd>Octo pr search<CR>", icon = "", desc = "Search PRs" },
+    { "<leader>oc", icon= "", group = "Comment/Code", mode = {"n", "v"} },
+    { "<leader>oca", "<cmd>Octo comment add<CR>", icon = "", desc = "Add a new comment", mode = {"n", "v"} },
+    { "<leader>ocd", "<cmd>Octo comment delete<CR>", icon = "", desc = "Delete a comment", mode = {"n", "v"} },
+    { "<leader>op", icon= "", group = "Pull Request" },
+    { "<leader>opc", "<cmd>Octo pr checkout<CR>", icon = "", desc = "Checkout PR" },
+    { "<leader>opf", "<cmd>Octo pr changes", icon = "", desc = "List PR Chaged files" },
+    { "<leader>opl", "<cmd>Octo pr commits<CR>", icon = "", desc = "List PR commits" },
+    { "<leader>opd", "<cmd>Octo pr diff<CR>", icon = "", desc = "Show PR diff" },
+    { "<leader>opu", "<cmd>Octo pr url<CR>", icon = "", desc = "Copy PR url to clipboard" },
+    { "<leader>or", icon= "", group = "Review" },
+    { "<leader>ora", "<cmd>Octo reviewer add<CR>", icon = "", desc = "Assign a PR reviewer" },
+    { "<leader>ors", "<cmd>Octo review start<CR>", icon = "", desc = "Start a new review" },
+    { "<leader>ort", "<cmd>Octo review submit<CR>", icon = "", desc = "Submit the review" },
+    { "<leader>orr", "<cmd>Octo review resume<CR>", icon = "", desc = "Edit a pending review for current PR" },
+    { "<leader>ord", "<cmd>Octo review discard<CR>", icon = "", desc = "Deletes a pending review for current PR if any" },
+    { "<leader>oro", "<cmd>Octo review comments<CR>", icon = "", desc = "View pending review comments" },
+    { "<leader>orm", "<cmd>Octo review commit<CR>", icon = "", desc = "Pick a specific commit to review" },
+    { "<leader>orc", "<cmd>Octo review close<CR>", icon = "", desc = "Close the review window and return to the PR" },
+  }
+)
