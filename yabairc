@@ -31,27 +31,26 @@ yabai -m config window_gap                   10
 
 # apps to not manage when they start
 yabai -m rule --add app="^System Settings$" manage=off
-yabai -m rule --add app="^Finder$" manage=off
 yabai -m rule --add app="^Photo Booth$" manage=off
-yabai -m rule --add app="^Parallels" manage=off
 yabai -m rule --add app="^1Password$" manage=off
 
 # apps fixed to a space
 yabai -m rule --add app="^kitty$" space=1
-yabai -m rule --add app="^Google Chrome$" space=2
-yabai -m rule --add app="^Firefox" space=2
-yabai -m rule --add app="^DBeaver$" space=3
-yabai -m rule --add app="^Navicat" space=3
-yabai -m rule --add app="^Postman" space=4
-yabai -m rule --add app="^Boop" space=4
-yabai -m rule --add app="^Arc$" space=5
-yabai -m rule --add app="^Zen Browser$" space=5
-yabai -m rule --add app="^Notes$" space=6
-yabai -m rule --add app="^Slack" space=7
-yabai -m rule --add app="^Microsoft Teams" space=7
-yabai -m rule --add app="^Spotify$" space=8
-yabai -m rule --add app="^Fantastical$" space=8
-yabai -m rule --add app="^Todoist$" space=8
+yabai -m rule --add app="^DataGrip" space=2
+yabai -m rule --add app="^Google Chrome$" space=3
+yabai -m rule --add app="^Firefox" space=3
+yabai -m rule --add app="^Postman" space=3
+yabai -m rule --add app="^Boop" space=3
+yabai -m rule --add app="^Arc$" space=4
+yabai -m rule --add app="^Obsidian$" space=5
+yabai -m rule --add app="^Slack" space=6
+yabai -m rule --add app="^Microsoft Teams" space=6
+yabai -m rule --add app="^Spotify$" space=7
+yabai -m rule --add app="^Fantastical$" space=7
+yabai -m rule --add app="^Todoist$" space=7
+yabai -m rule --add app="^Finder$" space=8
+yabai -m rule --add app="^ChatGPT$" space=8
+yabai -m rule --add app="^Parallels" space=9
 
 # https://github.com/FelixKratz/JankyBorders
 borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0 &
