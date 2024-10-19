@@ -1,4 +1,5 @@
 alias nvim-lazy="NVIM_APPNAME=LazyVim nvim"
+alias nvim-kickstart='NVIM_APPNAME="nvim-kickstart" nvim'
 
 alias myip='curl -s ifconfig.me | cut -c 1-'
 
@@ -26,3 +27,4 @@ fi
 alias prlrun="~/.config/zsh/scripts/prlrun.zsh"
 
 alias nz="nvim-lazy"
+alias ns="nvim-kickstart"

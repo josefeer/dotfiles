@@ -4,10 +4,6 @@ if grep -q 'Ubuntu' /etc/os-release; then
   echo "This is Ubuntu."
 #   Update apt and add necesary repositories
 #   Install binaries (apt install <package>)
-elif grep -q 'Arch Linux' /etc/os-release; then
-  echo "This is Arch Linux."
-#   Update pacman
-#   Install binaries (pacman -Sy <package>)
 else
   echo "Unknown distribution. Nothing do here"
 fi
@@ -27,3 +23,5 @@ fi
 # TODO repositories to clone
 # - astronvim: https://github.com/AstroNvim/AstroNvim
 # - lazyvim
+
+# TODO: switch to nix package manager instead of apt for global configs

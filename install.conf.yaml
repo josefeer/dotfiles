@@ -16,6 +16,10 @@
       create: true
       path: config/lazyvim/lua
       force: true
+    ~/.config/nvim-kickstart/:
+      create: true
+      path: config/kickstart
+      force: true
     ~/.config/lazygit/config.yml:
       create: true
       path: config/lazygit/config.yml
