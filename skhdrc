@@ -70,10 +70,9 @@ shift + alt - o : yabai -m window --resize right:175:0 2> /dev/null || yabai -m 
 # https://github.com/koekeishiya/skhd/issues/1
 hyper - a : open -a 'Arc'
 hyper - b : open -a 'Boop'
-hyper - c : open -a 'Google Chrome Canary'
+hyper - c : open -a 'Google Chrome'
 hyper - e : open -a 'Microsoft Teams'
 hyper - f : osascript -e 'tell application "Finder" to activate'
-hyper - g : open -a 'ChatGPT'
 hyper - l : open -a 'Fantastical'
 hyper - m : open -a 'Spotify'
 hyper - n : open -a 'Obsidian'
