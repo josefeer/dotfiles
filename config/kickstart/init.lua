@@ -64,9 +64,20 @@ vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right win
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
--- Personal Keybinds
+-- Basic personal keymaps
 vim.keymap.set("n", "<C-s>", "<cmd>w<CR>", { desc = "Write File" })
 vim.keymap.set("n", "<leader>Q", "<cmd>qa<CR>", { desc = "Quit All"})
+
+-- My keymaps for cursor always centered
+vim.keymap.set("n", "<C-d>", "<C-d>zz^")
+vim.keymap.set("n", "<C-u>", "<C-u>zz^")
+vim.keymap.set("n", "<C-o>", "<C-o>zz")
+vim.keymap.set("n", "<C-i>", "<C-i>zz")
+vim.keymap.set("n", "*", "*zz")
+vim.keymap.set("n", "n", "nzz")
+vim.keymap.set("n", "<S-n>", "<S-n>zz")
+vim.keymap.set("n", "<C-e>", "<C-e>j^")
+vim.keymap.set("n", "<C-y>", "<C-y>k^")
 
 ------------------------------------------------------------------------------------------------------------
 
