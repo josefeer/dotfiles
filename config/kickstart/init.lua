@@ -140,6 +140,7 @@ local lazy_ui_fallback = {
 require("lazy").setup({
   spec = { import = "plugins" },
   ui = { icons = vim.g.have_nerd_font and {} or lazy_ui_fallback },
+  rocks = { enabled = false }
 })
 
 ------------------------------------------------------------------------------------------------------------
