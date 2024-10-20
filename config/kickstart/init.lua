@@ -1,8 +1,10 @@
 --[[
+
   References
   - https://github.com/nvim-lua/kickstart.nvim
   - https://learnxinyminutes.com/docs/lua/
   - https://neovim.io/doc/user/lua-guide.html
+
 --]]
 
 -- Set <space> as the leader key
@@ -10,6 +12,11 @@
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+
+-- Disable unused providers
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_ruby_provider = 0
+vim.g.python3_host_prog = '/home/jose/.nvim-venv/bin/python3'
 
 ------------------------------------------------------------------------------------------------------------
 
@@ -35,6 +42,7 @@ vim.opt.splitbelow = true
 vim.opt.inccommand = "split" -- Preview substitutions live, as you type!
 vim.opt.cursorline = true
 vim.opt.scrolloff = 10 -- Minimal number of screen lines to keep above and below the cursor.
+vim.opt.showtabline = 0 -- Disable Tabline on Top, we are using lualine instead
 
 -- Sets how neovim will display certain whitespace characters in the editor.
 vim.opt.list = true --  See `:help 'list'`
@@ -66,7 +74,10 @@ vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper win
 
 -- Basic personal keymaps
 vim.keymap.set("n", "<C-s>", "<cmd>w<CR>", { desc = "Write File" })
-vim.keymap.set("n", "<leader>Q", "<cmd>qa<CR>", { desc = "Quit All"})
+vim.keymap.set("n", "<leader>q", "<cmd>qa<CR>", { desc = "Quit Neovim"})
+vim.keymap.set("n", "<C-c>", "<cmd>bd<CR>", { desc = "Close Buffer"})
+vim.keymap.set("n", "<C-w>n", "<cmd>tabnew %<CR>", { desc = "New Tab"})
+vim.keymap.set("n", "<C-w>c", "<cmd>tabclose<CR>", { desc = "Close Tab"})
 
 -- My keymaps for cursor always centered
 vim.keymap.set("n", "<C-d>", "<C-d>zz^")
