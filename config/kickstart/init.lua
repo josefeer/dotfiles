@@ -132,25 +132,11 @@ vim.opt.rtp:prepend(lazypath)
 --  To update plugins you can run
 --    :Lazy update
 
-local lazy_ui_fallback = {
-  cmd = "⌘",
-  config = "🛠",
-  event = "📅",
-  ft = "📂",
-  init = "⚙",
-  keys = "🗝",
-  plugin = "🔌",
-  runtime = "💻",
-  require = "🌙",
-  source = "📄",
-  start = "🚀",
-  task = "📌",
-  lazy = "💤 ",
-}
+local fallbacks = require("fallbacks")
 
 require("lazy").setup({
   spec = { import = "plugins" },
-  ui = { icons = vim.g.have_nerd_font and {} or lazy_ui_fallback },
+  ui = { icons = vim.g.have_nerd_font and {} or fallbacks.lazy_ui_icons},
   rocks = { enabled = false }
 })
 
