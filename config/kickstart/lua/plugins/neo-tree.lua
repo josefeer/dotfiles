@@ -11,17 +11,16 @@ return {
   },
   cmd = 'Neotree',
   keys = {
-    { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
+    { '\\', ':Neotree toggle<CR>', desc = 'NeoTree toggle', silent = true },
   },
   opts = {
     auto_clean_after_session_restore = true,
     close_if_last_window = true,
-    filesystem = {
-      window = {
-        mappings = {
-          ['\\'] = 'close_window',
-        },
-      },
+    default_component_configs = {
+      indent = { padding = 0 },
+    },
+    window = {
+      width = 45,
     },
   },
 }

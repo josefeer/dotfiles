@@ -90,6 +90,9 @@ vim.keymap.set("n", "<S-n>", "<S-n>zz")
 vim.keymap.set("n", "<C-e>", "<C-e>j^")
 vim.keymap.set("n", "<C-y>", "<C-y>k^")
 
+-- Plugins Keymaps
+vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open Oil" })
+
 ------------------------------------------------------------------------------------------------------------
 
 -- [[ Basic Autocommands ]]

@@ -22,4 +22,10 @@ return {
     -- You can configure highlights by doing something like:
     vim.cmd.hi("Comment gui=none")
   end,
+  opts = {
+    transparent = true,
+    styles = {
+      sidebars = "transparent",
+    },
+  },
 }
