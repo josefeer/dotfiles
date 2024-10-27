@@ -58,6 +58,14 @@ end)
 
 ------------------------------------------------------------------------------------------------------------
 
+--[[ Basic Imports ]]
+
+local helpers = require("helpers")
+local fallbacks = require("fallbacks")
+
+
+------------------------------------------------------------------------------------------------------------
+
 --[[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
@@ -75,7 +83,7 @@ vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper win
 -- Basic personal keymaps
 vim.keymap.set("n", "<C-s>", "<cmd>w<CR>", { desc = "Write File" })
 vim.keymap.set("n", "<leader>q", "<cmd>qa<CR>", { desc = "Quit Neovim"})
-vim.keymap.set("n", "<C-c>", "<cmd>bd<CR>", { desc = "Close Buffer"})
+vim.keymap.set("n", "<C-c>", helpers.bufremove, { desc = "Close Buffer"})
 vim.keymap.set("n", "<C-w>n", "<cmd>tabnew %<CR>", { desc = "New Tab"})
 vim.keymap.set("n", "<C-w>c", "<cmd>tabclose<CR>", { desc = "Close Tab"})
 
@@ -89,7 +97,6 @@ vim.keymap.set("n", "n", "nzz")
 vim.keymap.set("n", "<S-n>", "<S-n>zz")
 vim.keymap.set("n", "<C-e>", "<C-e>j^")
 vim.keymap.set("n", "<C-y>", "<C-y>k^")
-
 -- Plugins Keymaps
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open Oil" })
 
@@ -134,8 +141,6 @@ vim.opt.rtp:prepend(lazypath)
 
 --  To update plugins you can run
 --    :Lazy update
-
-local fallbacks = require("fallbacks")
 
 require("lazy").setup({
   spec = { import = "plugins" },
