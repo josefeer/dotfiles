@@ -68,7 +68,7 @@ shift + alt - o : yabai -m window --resize right:175:0 2> /dev/null || yabai -m 
 
 # apps shortcuts for macos
 # https://github.com/koekeishiya/skhd/issues/1
-hyper - a : open -a 'Arc'
+hyper - a : open -a 'Safari'
 hyper - b : open -a 'Boop'
 hyper - c : open -a 'Google Chrome'
 hyper - e : open -a 'Microsoft Teams'

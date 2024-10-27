@@ -42,6 +42,7 @@ yabai -m rule --add app="^Firefox" space=3
 yabai -m rule --add app="^Postman" space=3
 yabai -m rule --add app="^Boop" space=3
 yabai -m rule --add app="^Arc$" space=4
+yabai -m rule --add app="^Safari$" space=4
 yabai -m rule --add app="^Obsidian$" space=5
 yabai -m rule --add app="^Slack" space=6
 yabai -m rule --add app="^Microsoft Teams" space=6
