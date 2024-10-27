@@ -86,6 +86,7 @@ vim.keymap.set("n", "<leader>q", "<cmd>qa<CR>", { desc = "Quit Neovim"})
 vim.keymap.set("n", "<C-c>", helpers.bufremove, { desc = "Close Buffer"})
 vim.keymap.set("n", "<C-w>n", "<cmd>tabnew %<CR>", { desc = "New Tab"})
 vim.keymap.set("n", "<C-w>c", "<cmd>tabclose<CR>", { desc = "Close Tab"})
+vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
 -- My keymaps for cursor always centered
 vim.keymap.set("n", "<C-d>", "<C-d>zz^")
