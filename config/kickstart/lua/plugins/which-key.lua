@@ -24,6 +24,7 @@ return {
       { "<leader>s", group = "[S]earch", icon = ""},
       { "<leader>t", group = "[T]oggle", icon = "" },
       { "<leader>g", group = "[G]it", icon = "", mode = { "n", "v" } },
+      { "<leader>h", group = "[H]arpoon", icon = "󱡀" },
     },
   },
 }
