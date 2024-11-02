@@ -43,6 +43,7 @@ vim.opt.inccommand = "split" -- Preview substitutions live, as you type!
 vim.opt.cursorline = true
 vim.opt.scrolloff = 10 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.showtabline = 0 -- Disable Tabline on Top, we are using lualine instead
+vim.opt.wrap = false -- Disable line wrap/break when text overflows the window.
 
 -- Sets how neovim will display certain whitespace characters in the editor.
 vim.opt.list = true --  See `:help 'list'`
