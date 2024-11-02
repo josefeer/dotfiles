@@ -48,6 +48,11 @@ vim.opt.showtabline = 0 -- Disable Tabline on Top, we are using lualine instead
 vim.opt.list = true --  See `:help 'list'`
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" } --  and `:help 'listchars'`
 
+-- Enable folding
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldmethod = "expr"
+vim.opt.foldlevel = 99 -- Keep folds open when opening files
+
 -- Sync clipboard between OS and Neovim.
 --  Schedule the setting after `UiEnter` because it can increase startup-time.
 --  Remove this option if you want your OS clipboard to remain independent.
@@ -81,11 +86,12 @@ vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper win
 
 -- Basic personal keymaps
 vim.keymap.set("n", "<C-s>", "<cmd>w<CR>", { desc = "Write File" })
-vim.keymap.set("n", "<leader>qq", "<cmd>qa<CR>", { desc = "Quit Neovim"})
+vim.keymap.set("n", "<leader>qq", "<cmd>qa!<CR>", { desc = "Quit Neovim"})
 vim.keymap.set("n", "<C-c>", helpers.bufremove, { desc = "Close Buffer"})
 vim.keymap.set("n", "<C-w>n", "<cmd>tabnew %<CR>", { desc = "New Tab"})
 vim.keymap.set("n", "<C-w>c", "<cmd>tabclose<CR>", { desc = "Close Tab"})
-vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostic"})
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
 -- My keymaps for cursor always centered
 vim.keymap.set("n", "<C-d>", "<C-d>zz^")
