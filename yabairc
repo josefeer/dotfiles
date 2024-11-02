@@ -50,8 +50,8 @@ yabai -m rule --add app="^Spotify$" space=7
 yabai -m rule --add app="^Fantastical$" space=7
 yabai -m rule --add app="^Todoist$" space=7
 yabai -m rule --add app="^Finder$" space=8
-yabai -m rule --add app="^ChatGPT$" space=8
-yabai -m rule --add app="^Parallels" space=9
+yabai -m rule --add app="^ChatGPT$" space=9
+yabai -m rule --add app="^Parallels" space=10
 
 # https://github.com/FelixKratz/JankyBorders
 borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0 &
