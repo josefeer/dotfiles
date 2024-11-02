@@ -91,7 +91,6 @@ vim.keymap.set("n", "<leader>qq", "<cmd>qa!<CR>", { desc = "Quit Neovim"})
 vim.keymap.set("n", "<C-c>", helpers.bufremove, { desc = "Close Buffer"})
 vim.keymap.set("n", "<C-w>n", "<cmd>tabnew %<CR>", { desc = "New Tab"})
 vim.keymap.set("n", "<C-w>c", "<cmd>tabclose<CR>", { desc = "Close Tab"})
-vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostic"})
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
 -- My keymaps for cursor always centered
@@ -122,6 +121,21 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	callback = function()
 		vim.highlight.on_yank()
 	end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+  group = vim.api.nvim_create_augroup("kickstart-diagnostics-keymaps", { clear = true }),
+  pattern = "*",
+  callback = function()
+    if vim.bo.filetype ~= "" then
+      vim.keymap.set(
+        "n",
+        "<leader>cd",
+        vim.diagnostic.open_float,
+        { desc = "Line Diagnostic", buffer = true }
+      )
+    end
+  end,
 })
 
 ------------------------------------------------------------------------------------------------------------
