@@ -7,5 +7,14 @@
 
 return {
   "stevearc/oil.nvim",
-  opts = {}
+  opts = {
+    delete_to_trash = true,
+    keymaps = {
+      ["<C-h>"] = false,
+      ["<C-s>"] = false,
+    },
+    view_options = {
+      show_hidden = true
+    },
+  }
 }

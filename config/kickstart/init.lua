@@ -89,6 +89,7 @@ vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper win
 vim.keymap.set("n", "<C-s>", "<cmd>w<CR>", { desc = "Write File" })
 vim.keymap.set("n", "<leader>qq", "<cmd>qa!<CR>", { desc = "Quit Neovim"})
 vim.keymap.set("n", "<C-c>", helpers.bufremove, { desc = "Close Buffer"})
+vim.keymap.set("n", "<C-x>", "<cmd>bd<CR>", { desc = "Close Buffer and Window"})
 vim.keymap.set("n", "<C-w>n", "<cmd>tabnew %<CR>", { desc = "New Tab"})
 vim.keymap.set("n", "<C-w>c", "<cmd>tabclose<CR>", { desc = "Close Tab"})
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
