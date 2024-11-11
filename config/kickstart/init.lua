@@ -26,6 +26,9 @@ vim.g.python3_host_prog = '/home/jose/.nvim-venv/bin/python3'
 --  For more options, you can see `:help option-list`
 
 vim.g.have_nerd_font = true -- Set to true if you have a Nerd Font installed and selected in the terminal
+vim.g.loaded_netrw = 1 -- nvim-tree recommendation
+vim.g.loaded_netrwPlugin = 1 -- nvim-tree recommendation
+
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.mouse = "a"
@@ -53,6 +56,7 @@ vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" } --  and `:help '
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.opt.foldmethod = "expr"
 vim.opt.foldlevel = 99 -- Keep folds open when opening files
+
 
 -- Sync clipboard between OS and Neovim.
 --  Schedule the setting after `UiEnter` because it can increase startup-time.

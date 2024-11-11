@@ -7,6 +7,7 @@
 
 return {
   "stevearc/oil.nvim",
+  cmd = "Oil",
   opts = {
     delete_to_trash = true,
     keymaps = {
