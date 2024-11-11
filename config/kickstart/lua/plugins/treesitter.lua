@@ -7,6 +7,7 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
+    event = "VeryLazy",
     build = ":TSUpdate",
     main = "nvim-treesitter.configs", -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
@@ -98,11 +99,13 @@ return {
   },
   {
     "nvim-treesitter/nvim-treesitter-context",
+    event = "VeryLazy",
     opts = {
       max_lines = 3
     }
   },
   {
     "nvim-treesitter/nvim-treesitter-textobjects",
+    event = "VeryLazy",
   }
 }
