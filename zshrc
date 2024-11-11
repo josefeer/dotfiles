@@ -34,3 +34,5 @@ export NVM_DIR="$HOME/.nvm"
 # Basic Color References: https://stackoverflow.com/questions/689765/how-can-i-change-the-color-of-my-prompt-in-zsh-different-from-normal-text
 # Prompt values: https://superuser.com/questions/49092/how-to-format-the-path-in-a-zsh-prompt
 # Configuring Zsh without Dependencies: https://thevaluable.dev/zsh-install-configure-mouseless/
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
