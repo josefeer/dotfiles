@@ -8,9 +8,9 @@
     ~/.aliases: 
     ~/.zshrc: 
     ~/.gitconfig: 
-    ~/.config/tmux/tmux.conf:
+    ~/.config/tmux/:
       create: true
-      path: config/tmux/tmux.conf
+      path: config/tmux
       force: true
     ~/.config/LazyVim/lua:
       create: true
