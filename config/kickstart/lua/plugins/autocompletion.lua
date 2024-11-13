@@ -6,7 +6,7 @@
 
 return {
   "hrsh7th/nvim-cmp",
-  event = "InsertEnter",
+  event = "VeryLazy",
   dependencies = {
     -- Snippet Engine & its associated nvim-cmp source
     {
