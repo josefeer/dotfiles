@@ -8,6 +8,7 @@ return {
   "nvim-lualine/lualine.nvim",
   opts = {
     options = {
+      theme = "tokyonight",
       globalstatus = 3, -- single status bar for all buffers
     },
     sections = {
