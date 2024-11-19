@@ -1,11 +1,16 @@
 source ~/.aliases # Import Personal Aliases
 source ~/.config/zsh/plugins/git-prompt.zsh # Import Prompt Git Status
 
+# Custom Plugins
+source <(fzf --zsh)
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 # Enable VCS Built-In Service
 prompt_git_setup
 
-# Enable Zsh Built-In Autocompletion
-autoload -U compinit; compinit
+# Enable Zsh Built-In Autocompletion. Deprecate
+# autoload -U compinit; compinit
 
 # Custom Prompt
 OS=$(uname -s)
@@ -31,8 +36,6 @@ export NVM_DIR="$HOME/.nvm"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # References
 # Classic oh-my-zsh prompt: https://stackoverflow.com/questions/68168011/how-to-alter-the-configuration-of-robbyrussel-theme-in-oh-my-zsh-so-that-the-arr
