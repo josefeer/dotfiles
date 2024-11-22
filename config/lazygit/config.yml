@@ -1,10 +1,10 @@
-notARepository: 'skip'
 os:
     editPreset: 'nvim'
+notARepository: skip
 git:
     disableForcePushing: true
 keybinding:
     universal:
-        pushFile: <disabled>
+        pushFiles: <disabled>
     branches:
         pushTag: <disabled>
