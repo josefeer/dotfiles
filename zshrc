@@ -26,6 +26,17 @@ eval "$(zoxide init --cmd cd zsh )"
 # bat as manpager
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
+# fzf integration and keybinds
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# History Impromevements
+setopt SHARE_HISTORY
+setopt INC_APPEND_HISTORY
+setopt HIST_IGNORE_SPACE
+setopt HIST_REDUCE_BLANKS
+HISTSIZE=10000
+SAVEHIST=10000
+
 # Enabling X11 forwarding
 export XAUTHORITY=$HOME/.Xauthority
 
@@ -33,9 +44,6 @@ export XAUTHORITY=$HOME/.Xauthority
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 
 # References
 # Classic oh-my-zsh prompt: https://stackoverflow.com/questions/68168011/how-to-alter-the-configuration-of-robbyrussel-theme-in-oh-my-zsh-so-that-the-arr

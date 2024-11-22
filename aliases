@@ -28,3 +28,5 @@ alias prlrun="~/.config/zsh/scripts/prlrun.zsh"
 
 alias nz="nvim-lazy"
 alias ns="nvim-kickstart"
+
+alias fd="/usr/bin/fdfind"
