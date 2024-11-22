@@ -3,8 +3,8 @@ os:
     editPreset: 'nvim'
 git:
     disableForcePushing: true
-keybindings:
+keybinding:
     universal:
-        pushFile: null
+        pushFile: <disabled>
     branches:
-        pushTag: null
+        pushTag: <disabled>
