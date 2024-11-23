@@ -8,9 +8,6 @@
     ~/.aliases: 
     ~/.zshrc: 
     ~/.gitconfig: 
-    ~/.yabairc: 
-    ~/.skhdrc: 
-      force: true
     ~/.config/kitty:
       create: true
       path: config/kitty
@@ -18,6 +15,14 @@
     ~/.config/zsh:
       create: true
       path: config/zsh
+      force: true
+    ~/.config/aerospace:
+      create: true
+      path: config/aerospace
+      force: true
+    ~/.config/nvim-kickstart/:
+      create: true
+      path: config/kickstart
       force: true
 
 - create:
