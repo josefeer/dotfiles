@@ -18,6 +18,19 @@ return {
     buffer_leader_key = ',', -- Per Buffer Mappings, dettached from regular marks
     per_buffer_config = {
       lines = 5,
-    }
+    },
+    index_keys = "qwfpbjluyoQWFPBJLUYO", -- keys mapped to bookmark index, i.e. 1st bookmark will be accessible by q, and 12th - by F
+    mappings = {
+      edit = "e",
+      delete_mode = "d",
+      clear_all_items = "C",
+      toggle = "s", -- used as save if separate_save_and_remove is true
+      open_vertical = "v",
+      open_horizontal = "h",
+      quit = "X",
+      remove = "x", -- only used if separate_save_and_remove is true
+      next_item = "]",
+      prev_item = "["
+    },
   }
 }
