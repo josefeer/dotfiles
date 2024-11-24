@@ -112,7 +112,7 @@ alt-shift-right = 'move right'
 # See: https://nikitabobko.github.io/AeroSpace/commands#resize
 alt-shift-minus = 'resize smart -50'
 alt-shift-equal = 'resize smart +50'
-alt-shift-slash = 'fullscreen'
+alt-shift-backtick = 'fullscreen'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
 alt-1 = 'workspace 1'
@@ -247,7 +247,7 @@ run = 'move-node-to-workspace N' # mnemonics N - [N]otes
 
 [[on-window-detected]]
 if.app-id = 'com.todoist.mac.Todoist'
-run = 'move-node-to-workspace O' # mnemonics O - T[o]doist
+run = 'move-node-to-workspace O' # mnemonics O - T[O]doist
 
 [[on-window-detected]]
 if.app-id = 'com.postmanlabs.mac'
@@ -262,12 +262,12 @@ if.app-id = 'net.kovidgoyal.kitty'
 run = 'move-node-to-workspace T' # mnemonics T - [T]erminal
 
 [[on-window-detected]]
-if.app-id = 'com.apple.Preview'
-run = 'move-node-to-workspace V' # mnemonics V - Pre[V]iew
+if.app-id = 'com.parallels.desktop.console'
+run = 'move-node-to-workspace V' # mnemonics V - [V]irtual Machine (VM)
 
 [[on-window-detected]]
-if.app-id = 'com.parallels.desktop.console'
-run = 'move-node-to-workspace W' # mnemonics W - [W]indows
+if.app-id = 'com.apple.Preview'
+run = 'move-node-to-workspace W' # mnemonics W - Previe[W]
 
 [[on-window-detected]]
 if.app-id = 'org.mozilla.firefox'
