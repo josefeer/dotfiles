@@ -9,9 +9,6 @@ source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Enable VCS Built-In Service
 prompt_git_setup
 
-# Enable Zsh Built-In Autocompletion. Deprecate
-# autoload -U compinit; compinit
-
 # Custom Prompt
 OS=$(uname -s)
 PROMPT='%F{blue}➜ %F{cyan}%~ %F{white}$(prompt_git_info)$(prompt_git_status)'
@@ -21,7 +18,7 @@ if [[  "$OS" == "Darwin" ]]; then
 fi
 
 # zoxide (improved cd)
-eval "$(zoxide init --cmd cd zsh )"
+eval "$(zoxide init zsh)"
 
 # bat as manpager
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
@@ -34,8 +31,10 @@ setopt SHARE_HISTORY
 setopt INC_APPEND_HISTORY
 setopt HIST_IGNORE_SPACE
 setopt HIST_REDUCE_BLANKS
+setopt HIST_IGNORE_DUPS
 HISTSIZE=10000
 SAVEHIST=10000
+HISTFILE=~/.zsh_history
 
 # Enabling X11 forwarding
 export XAUTHORITY=$HOME/.Xauthority
