@@ -20,6 +20,10 @@
       create: true
       path: config/kickstart
       force: true
+    ~/.config/yazi/:
+      create: true
+      path: config/yazi
+      force: true
     ~/.config/lazygit/config.yml:
       create: true
       path: config/lazygit/config.yml
