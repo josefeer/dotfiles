@@ -18,7 +18,7 @@ if [[  "$OS" == "Darwin" ]]; then
 fi
 
 # zoxide (improved cd)
-eval "$(zoxide init zsh)"
+eval "$(zoxide init zsh --cmd cd)"
 
 # bat as manpager
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
