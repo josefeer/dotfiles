@@ -98,6 +98,10 @@ vim.keymap.set("n", "<C-w>n", "<cmd>tabnew %<CR>", { desc = "New Tab"})
 vim.keymap.set("n", "<C-w>c", "<cmd>tabclose<CR>", { desc = "Close Tab"})
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
+-- Keep ; and , functionality when using arrow.nvim for f & t
+vim.keymap.set("n", "<C-;>", ";", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-,>", ",", { noremap = true, silent = true })
+
 -- My keymaps for cursor always centered
 vim.keymap.set("n", "<C-d>", "<C-d>zz^")
 vim.keymap.set("n", "<C-u>", "<C-u>zz^")
