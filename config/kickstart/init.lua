@@ -116,6 +116,10 @@ vim.keymap.set("n", "<C-y>", "<C-y>k^")
 -- Oil Keymaps
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open Oil" })
 
+-- Clipboard Keymaps
+vim.keymap.set("n", "<leader>ba", "<cmd>let @+ = expand('%:p')<cr>", { desc = "Copy file [A]bsolute path " })
+vim.keymap.set("n", "<leader>br", "<cmd>let @+ = expand('%:.')<cr>", { desc = "Copy file [R]elative path " })
+
 ------------------------------------------------------------------------------------------------------------
 
 -- [[ Basic Autocommands ]]

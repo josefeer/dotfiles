@@ -17,6 +17,7 @@ return {
     leader_key = ';', -- Recommended to be a single key
     buffer_leader_key = ',', -- Per Buffer Mappings, dettached from regular marks
     per_buffer_config = {
+      sort_automatically = false, -- Auto sort buffer marks.
       lines = 5,
     },
     index_keys = "qwfpbjluyoQWFPBJLUYO", -- keys mapped to bookmark index, i.e. 1st bookmark will be accessible by q, and 12th - by F
