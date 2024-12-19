@@ -120,6 +120,11 @@ vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open Oil" })
 vim.keymap.set("n", "<leader>ba", "<cmd>let @+ = expand('%:p')<cr>", { desc = "Copy file [A]bsolute path " })
 vim.keymap.set("n", "<leader>br", "<cmd>let @+ = expand('%:.')<cr>", { desc = "Copy file [R]elative path " })
 
+-- Tab Keymaps
+vim.keymap.set("n", "<leader>tq", function() helpers.switch_to_tab(1) end, { desc = "Go to tab 1" })
+vim.keymap.set("n", "<leader>tw", function () helpers.switch_to_tab(2) end, { desc = "Go to tab 2" })
+vim.keymap.set("n", "<leader>tf", function() helpers.switch_to_tab(3) end, { desc = "Go to tab 3" })
+
 ------------------------------------------------------------------------------------------------------------
 
 -- [[ Basic Autocommands ]]

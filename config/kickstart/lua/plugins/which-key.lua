@@ -21,6 +21,7 @@ return {
     -- Document existing key chains
     spec = {
       { "<leader>c", group = "[C]ode", mode = { "n", "x" }, icon = "" },
+      { "<leader>t", group = "[T]abs", icon = "󰓩"},
       { "<leader>s", group = "[S]earch", icon = ""},
       { "<leader>g", group = "[G]it", icon = "", mode = { "n", "v" } },
       { "<leader>h", group = "[H]arpoon", icon = "󱡀" },

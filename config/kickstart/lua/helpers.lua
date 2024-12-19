@@ -44,4 +44,16 @@ function H.bufremove(buf)
   end
 end
 
+function H.switch_to_tab(tab_number)
+  local tabpages = vim.api.nvim_list_tabpages()
+  local current_tab_count = #tabpages
+
+  if tab_number <= current_tab_count then
+    vim.api.nvim_set_current_tabpage(tabpages[tab_number])
+  else
+    vim.cmd('tabnew')
+    vim.cmd('tabnext ' .. tab_number)
+  end
+end
+
 return H
