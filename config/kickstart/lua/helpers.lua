@@ -44,6 +44,7 @@ function H.bufremove(buf)
   end
 end
 
+-- Quick Tab Switch
 function H.switch_to_tab(tab_number)
   local tabpages = vim.api.nvim_list_tabpages()
   local current_tab_count = #tabpages
@@ -54,6 +55,161 @@ function H.switch_to_tab(tab_number)
     vim.cmd('tabnew')
     vim.cmd('tabnext ' .. tab_number)
   end
+end
+
+-- Copy file relative path to git repository
+local function get_git_root()
+  local handle = io.popen('git rev-parse --show-toplevel 2>/dev/null')
+  if handle == nil then
+    return nil
+  end
+  local result = handle:read("*a")
+  handle:close()
+  if result == '' then
+    return nil
+  else
+    return result:gsub('%s+$', '') -- Remove trailing whitespace
+  end
+end
+
+local function get_remote_url()
+  local handle = io.popen('git config --get remote.origin.url 2>/dev/null')
+  if handle == nil then
+    return nil
+  end
+  local result = handle:read("*a")
+  handle:close()
+  if result == '' then
+    return nil
+  else
+    return result:gsub('%s+$', '')
+  end
+end
+
+local function get_repo_name()
+  local remote_url = get_remote_url()
+  if not remote_url then
+    return nil
+  end
+  remote_url = remote_url:gsub("%.git$", "") -- Remove .git suffix
+  local repo_name = remote_url:match(".*/(.*)$")
+  return repo_name
+end
+
+local function get_relative_path_with_repo()
+  local repo_name = get_repo_name()
+  local git_root = get_git_root()
+  if not repo_name or not git_root then
+    return nil
+  end
+  local file_path = vim.fn.expand('%:p')
+  local relative_path = file_path:sub(#git_root + 2)
+  return repo_name .. "/" .. relative_path
+end
+
+function H.copy_relative_path_with_repo_to_clipboard()
+  local path = get_relative_path_with_repo()
+  if not path then
+    print("Could not get relative path")
+    return
+  end
+  vim.fn.setreg('+', path)
+end
+
+-- Copy github url to clipboard
+local function convert_remote_url_to_http(url)
+  if url:match("^git@") then
+    url = url:gsub(":", "/")
+    url = url:gsub("^git@", "https://")
+  elseif url:match("^https?://") then
+    -- Keep as is
+  end
+  url = url:gsub("%.git$", "")
+  return url
+end
+
+local function get_current_branch()
+  local handle = io.popen('git rev-parse --abbrev-ref HEAD 2>/dev/null')
+  if handle == nil then
+    return nil
+  end
+  local result = handle:read("*a")
+  handle:close()
+  if result == '' then
+    return nil
+  else
+    return result:gsub('%s+$', '')
+  end
+end
+
+local function get_file_url()
+  local remote_url = get_remote_url()
+  if not remote_url then
+    return nil
+  end
+  remote_url = convert_remote_url_to_http(remote_url)
+  local branch = get_current_branch()
+  if not branch then
+    return nil
+  end
+  local git_root = get_git_root()
+  if not git_root then
+    return nil
+  end
+  local file_path = vim.fn.expand('%:p')
+  local relative_path = file_path:sub(#git_root + 2)
+  local url = remote_url .. "/blob/" .. branch .. "/" .. relative_path
+  return url
+end
+
+function H.copy_url_to_clipboard()
+  local url = get_file_url()
+  if not url then
+    print("Could not generate file URL")
+    return
+  end
+  vim.fn.setreg('+', url)
+end
+
+-- Copy github url permalinks to clipboard
+local function get_line_range()
+  local mode = vim.fn.mode()
+  if mode == 'v' or mode == 'V' or mode == '\22' then
+    local start_line = vim.fn.line("'<")
+    local end_line = vim.fn.line("'>")
+    if start_line > end_line then
+      start_line, end_line = end_line, start_line
+    end
+    return start_line, end_line
+  else
+    local line = vim.fn.line('.')
+    return line, line
+  end
+end
+
+local function get_file_url_with_lines()
+  local url = get_file_url()
+  if not url then
+    return nil
+  end
+  local start_line, end_line = get_line_range()
+  if start_line and end_line then
+    if start_line == end_line then
+      url = url .. "#L" .. start_line
+    else
+      url = url .. "#L" .. start_line .. "-L" .. end_line
+    end
+  end
+  return url
+end
+
+function H.copy_permalink_to_clipboard()
+  local url = get_file_url_with_lines()
+  if not url then
+    print("Could not generate permalink")
+    return
+  end
+  vim.fn.setreg('+', url)
 end
 
 return H

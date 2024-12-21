@@ -117,8 +117,12 @@ vim.keymap.set("n", "<C-y>", "<C-y>k^")
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open Oil" })
 
 -- Clipboard Keymaps
-vim.keymap.set("n", "<leader>ba", "<cmd>let @+ = expand('%:p')<cr>", { desc = "Copy file [A]bsolute path " })
-vim.keymap.set("n", "<leader>br", "<cmd>let @+ = expand('%:.')<cr>", { desc = "Copy file [R]elative path " })
+vim.keymap.set("n", "<leader>ba", "<cmd>let @+ = expand('%:p')<cr>", { desc = "Copy file [A]bsolute path" })
+vim.keymap.set("n", "<leader>br", "<cmd>let @+ = expand('%:.')<cr>", { desc = "Copy file [R]elative path" })
+vim.keymap.set("n", "<leader>bg", function() helpers.copy_relative_path_with_repo_to_clipboard() end, { desc = "Copy file [G]it Relative path" })
+vim.keymap.set("n", "<leader>bu", function() helpers.copy_url_to_clipboard() end, { desc = "Copy [G]ithub URL" })
+vim.keymap.set("n", "<leader>bp", function() helpers.copy_permalink_to_clipboard() end, { desc = "Copy Github [P]ermalink" })
+
 
 -- Tab Keymaps
 vim.keymap.set("n", "<leader>tq", function() helpers.switch_to_tab(1) end, { desc = "Go to tab 1" })
