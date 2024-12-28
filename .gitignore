@@ -1,3 +1,5 @@
 .DS_Store
-config/tmux/plugins/
-config/yazi/plugins/
+.config/tmux/plugins/
+.config/yazi/plugins/
+.config/htop/
+.config/neofetch/
