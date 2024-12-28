@@ -14,6 +14,7 @@
       paths = [
 	# Core CLI
         pkgs.bat
+        pkgs.eza
         pkgs.fzf
         pkgs.fd
         pkgs.htop
