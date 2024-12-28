@@ -23,9 +23,9 @@ return {
     vim.cmd.hi("Comment gui=none")
   end,
   opts = {
-    transparent = true,
-    styles = {
-      sidebars = "transparent",
-    },
+    -- transparent = true,
+    -- styles = {
+    --   sidebars = "transparent",
+    -- },
   },
 }
