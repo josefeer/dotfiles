@@ -9,11 +9,6 @@ alias sr="sudo reboot"
 alias ..="cd .."
 alias ...="cd ../.."
 
-alias psa="ps auxf"
-alias psgrep="ps aux | grep -v grep | grep -i -e VSZ -e"
-alias psmem="ps auxf | sort -nr -k 4"
-alias pscpu="ps auxf | sort -nr -k 3"
-
 alias icat="kitten icat"
 
 if command -v eza >/dev/null 2>&1; then
@@ -29,3 +24,5 @@ alias prlrun="~/.config/zsh/scripts/prlrun.zsh"
 alias nz="nvim-lazy"
 alias nt="nvim-kickstart"
 alias nc="nvim --clean"
+
+alias pathls="echo $PATH | tr ':' '\n' | sort | nl"
