@@ -8,7 +8,7 @@ These dotfiles provide a set of configurations and system-wide packages for MacO
 
 Clone this repository in your home directory.
 
-### macOS Setup
+### MacOS Setup
 
 1. Follow the instructions at [https://brew.sh](https://brew.sh) to install Homebrew if it is not already installed.
 2. Use the `Brewfile` located under `~/.dotfiles/dot-config/homebrew/` to install the necessary packages.
