@@ -23,7 +23,9 @@ Clone this repository in your home directory.
 4. Go to `~/.dotfiles/dot-config/nix/bin` and install the packages defined in the `flakes.nix` file, run:
    
    ```bash
-   nix profile install .#packages.default
+   # Replace aarch64-linux with x86_64-linux for x86 machines, for example Intel or AMD
+   nix profile install .#packages.aarch64-linux
+
    ```
 
 5. Optional commands to run:
