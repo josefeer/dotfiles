@@ -34,7 +34,7 @@ Clone this repository in your home directory.
    nix flake update
 
    # Added a new package/binary to the flake
-   nix flake upgrade dot-config/nix/bin
+   nix profile upgrade dot-config/nix/bin
    ```
 ### Finally
 
