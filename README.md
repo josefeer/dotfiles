@@ -1,9 +1,5 @@
 # Jose's dotfiles
 
-These dotfiles provide a set of configurations and system-wide packages for MacOS & Linux.
-
----
-
 ### First
 
 Clone this repository in your home directory.
@@ -17,7 +13,7 @@ Clone this repository in your home directory.
 1. Follow the instructions at [https://nixos.org/download/#nix-install-linux](https://nixos.org/download/#nix-install-linux) to install Nix with multi-user support.
 2. Update `/etc/nix/nix.conf` to enable flakes. Add the following to the config file
 
-   ```bash
+   ```conf
    experimental-features = nix-command flakes
    ```
 4. Go to `~/.dotfiles/dot-config/nix/bin` and install the packages defined in the `flakes.nix` file, run:
