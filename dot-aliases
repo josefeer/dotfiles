@@ -1,4 +1,4 @@
-alias nvim-kickstart='NVIM_APPNAME="nvim-kickstart" nvim'
+alias jfmdnvim='NVIM_APPNAME="jfmdnvim" nvim'
 
 alias myip='curl -s ifconfig.me | cut -c 1-'
 
@@ -20,7 +20,7 @@ fi
 
 alias prlrun="~/.config/zsh/scripts/prlrun.zsh"
 
-alias nt="nvim-kickstart"
+alias nt="jfmdnvim"
 alias nc="nvim --clean"
 
 alias pathls="echo $PATH | tr ':' '\n' | sort | nl"
