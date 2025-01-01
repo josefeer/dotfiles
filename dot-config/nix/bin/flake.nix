@@ -15,6 +15,7 @@
     pkgsX86_64 = import nixpkgs { system = systems.x86_64; };
     globalPackages = [
       # Core CLI
+      "git"
       "bat"
       "eza"
       "fzf"
@@ -32,6 +33,7 @@
       # TUIs
       "lazygit"
       "lazysql"
+      "lazydocker"
       "jqp"
       "yazi"
       # Random CLI
