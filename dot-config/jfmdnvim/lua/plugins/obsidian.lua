@@ -3,7 +3,7 @@
   TBD
 
 --]]
---
+
 local function is_darwin()
   local value = vim.fn.has("macunix")
   return not not value -- lua casting bools lol
@@ -11,6 +11,11 @@ end
 
 local function get_obsidian_workspaces(path)
   local expanded_path = vim.fn.expand(path)
+
+  local stat = vim.loop.fs_stat(expanded_path)
+  if not stat or stat.type ~= "directory" then
+    return {}
+  end
 
   -- Initialize the scandir handle
   local handle, err = vim.loop.fs_scandir(expanded_path)
@@ -46,10 +51,9 @@ return {
   "epwalsh/obsidian.nvim",
   version = "*",  -- recommended, use latest release instead of latest commit
   lazy = true,
-  ft = "markdown",
   enabled = is_darwin(),
   event = {
-  --   -- refer to `:h file-pattern` for more examples
+    --   -- refer to `:h file-pattern` for more examples
     "BufReadPre " .. vim.fn.expand(obsidian_workspaces_path) .. "/**/*.md",
     "BufNewFile " .. vim.fn.expand(obsidian_workspaces_path) .. "/**/*.md",
   },
