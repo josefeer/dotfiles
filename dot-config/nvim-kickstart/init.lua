@@ -160,6 +160,15 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+vim.api.nvim_create_autocmd("FileType", {
+  group = vim.api.nvim_create_augroup("MarkdownConceal", { clear = true }),
+  pattern = { "markdown", "md", "mdx" },
+  callback = function()
+    -- requirement for obsidian.nvim
+    vim.opt_local.conceallevel = 1
+  end,
+})
+
 ------------------------------------------------------------------------------------------------------------
 
 -- [[ Install `lazy.nvim` plugin manager ]]
