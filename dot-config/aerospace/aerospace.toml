@@ -112,8 +112,8 @@ ctrl-alt-shift-k = 'move up'
 ctrl-alt-shift-l = 'move right'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#resize
-ctrl-alt-shift-minus = 'resize smart -50'
-ctrl-alt-shift-equal = 'resize smart +50'
+ctrl-alt-shift-minus = 'resize smart -100'
+ctrl-alt-shift-equal = 'resize smart +100'
 ctrl-alt-shift-backtick = 'fullscreen --no-outer-gaps'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
