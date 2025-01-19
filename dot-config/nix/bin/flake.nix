@@ -16,6 +16,7 @@
     globalPackages = [
       # Core CLI
       "git"
+      "curl"
       "bat"
       "eza"
       "fzf"
