@@ -10,7 +10,7 @@ after-login-command = []
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
 after-startup-command = [
-	'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0'
+	'exec-and-forget borders active_color=0xff00ff99 inactive_color=0xffe1e3e4 width=5.0'
 ]
 
 # Start AeroSpace at login
@@ -43,7 +43,7 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 # You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
 # Useful if you don't use this macOS feature, but accidentally hit cmd-h or cmd-alt-h key
 # Also see: https://nikitabobko.github.io/AeroSpace/goodies#disable-hide-app
-automatically-unhide-macos-hidden-apps = false
+automatically-unhide-macos-hidden-apps = true
 
 # Possible values: (qwerty|dvorak)
 # See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
@@ -60,10 +60,10 @@ preset = 'qwerty'
 [gaps]
 inner.horizontal = 15
 inner.vertical =   15
-outer.left =       300
-outer.bottom =     10
-outer.top =        10
-outer.right =      300
+outer.left =       15
+outer.bottom =     15
+outer.top =        15
+outer.right =      15
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
