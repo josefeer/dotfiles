@@ -45,7 +45,7 @@ if ! pgrep tmux &> /dev/null; then
     tmux start-server
 fi
 
-If not already inside a tmux session, create or attach the session
+# If not already inside a tmux session, create or attach the session
 if [[ -z $TMUX ]]; then
     # Create a new session if it doesn't exist, or attach if it does
     if ! tmux has-session -t "$selected_name" 2>/dev/null; then

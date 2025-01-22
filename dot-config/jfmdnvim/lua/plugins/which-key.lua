@@ -21,7 +21,7 @@ return {
     -- Document existing key chains
     spec = {
       { "<leader>f", group = "Arrow [F]iles", icon = ""},
-      { "<leader>b", group = "Arrow [B]uffer", icon = ""},
+      { "<leader>m", group = "Arrow Buffer [M]arks", icon = ""},
       { "<leader>c", group = "[C]ode", mode = { "n", "x" }, icon = "" },
       { "<leader>t", group = "[T]abs", icon = "󰓩"},
       { "<leader>s", group = "[S]earch", icon = ""},

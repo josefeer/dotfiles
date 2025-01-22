@@ -15,7 +15,7 @@ return {
     separate_save_and_remove = true, -- if true, will remove the toggle and create the save/remove keymaps.
     show_icons = true,
     leader_key = '<leader>f', -- Recommended to be a single key
-    buffer_leader_key = '<leader>b', -- Per Buffer Mappings, dettached from regular marks
+    buffer_leader_key = '<leader>m', -- Per Buffer Mappings, dettached from regular marks
     per_buffer_config = {
       sort_automatically = false, -- Auto sort buffer marks.
       lines = 5,
