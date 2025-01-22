@@ -26,6 +26,8 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 # fzf integration and keybinds
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+bindkey -s ^f "~/.config/tmux/scripts/tmux-sessionizer.sh\n"
+
 # History Impromevements
 setopt SHARE_HISTORY
 setopt INC_APPEND_HISTORY
