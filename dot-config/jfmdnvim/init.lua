@@ -112,6 +112,9 @@ vim.keymap.set("n", "n", "nzz")
 vim.keymap.set("n", "<S-n>", "<S-n>zz")
 vim.keymap.set("n", "<C-e>", "<C-e>j^")
 vim.keymap.set("n", "<C-y>", "<C-y>k^")
+vim.keymap.set('n', '<C-f>', function()
+  vim.cmd('silent !tmux neww ~/.config/tmux/scripts/tmux-sessionizer.sh')
+end, { noremap = true, silent = true })
 
 -- Oil Keymaps
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open Oil" })
