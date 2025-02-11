@@ -9,7 +9,10 @@ return {
         enabled = false,
       },
     },
-    picker = {}
+    picker = {},
+    explorer = {
+      replace_netrw = true,
+    },
   },
   keys = {
     -- vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
@@ -49,6 +52,6 @@ return {
     -- vim.keymap.set("n", "<leader>sn", function()
     --   builtin.find_files({ cwd = vim.fn.stdpath("config") })
     -- end, { desc = "[S]earch [N]eovim files" })
-
+    { "\\", function() Snacks.explorer() end, desc = "Open Explorer" }
   },
 }
