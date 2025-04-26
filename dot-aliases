@@ -20,7 +20,7 @@ fi
 
 alias prlrun="~/.config/zsh/scripts/prlrun.zsh"
 
-alias nt="jfmdnvim"
+alias nt="jfmdnvim -n"
 alias nc="nvim --clean"
 
 alias pathls="echo $PATH | tr ':' '\n' | sort | nl"
