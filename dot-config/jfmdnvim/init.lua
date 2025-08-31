@@ -91,7 +91,7 @@ vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper win
 
 -- Basic personal keymaps
 vim.keymap.set("n", "<C-s>", "<cmd>w<CR>", { desc = "Write File" })
-vim.keymap.set("n", "<leader>qq", "<cmd>qa!<CR>", { desc = "Quit Neovim"})
+vim.keymap.set("n", "<leader>q", "<cmd>qa!<CR>", { desc = "Quit Neovim"})
 vim.keymap.set("n", "<C-c>", helpers.bufremove, { desc = "Close Buffer"})
 vim.keymap.set("n", "<C-x>", "<cmd>bd<CR>", { desc = "Close Buffer and Window"})
 vim.keymap.set("n", "<C-w>n", "<cmd>tabnew %<CR>", { desc = "New Tab"})
@@ -120,17 +120,20 @@ end, { noremap = true, silent = true })
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open Oil" })
 
 -- Clipboard Keymaps
-vim.keymap.set("n", "<leader>ba", "<cmd>let @+ = expand('%:p')<cr>", { desc = "Copy file [A]bsolute path" })
-vim.keymap.set("n", "<leader>br", "<cmd>let @+ = expand('%:.')<cr>", { desc = "Copy file [R]elative path" })
-vim.keymap.set("n", "<leader>bg", function() helpers.copy_relative_path_with_repo_to_clipboard() end, { desc = "Copy file [G]it Relative path" })
-vim.keymap.set("n", "<leader>bu", function() helpers.copy_url_to_clipboard() end, { desc = "Copy [G]ithub URL" })
-vim.keymap.set("n", "<leader>bp", function() helpers.copy_permalink_to_clipboard() end, { desc = "Copy Github [P]ermalink" })
+vim.keymap.set("n", "<leader>ca", "<cmd>let @+ = expand('%:p')<cr>", { desc = "Copy file [A]bsolute path" })
+vim.keymap.set("n", "<leader>cr", "<cmd>let @+ = expand('%:.')<cr>", { desc = "Copy file [R]elative path" })
+vim.keymap.set("n", "<leader>cg", function() helpers.copy_relative_path_with_repo_to_clipboard() end, { desc = "Copy file [G]it Relative path" })
+vim.keymap.set("n", "<leader>cu", function() helpers.copy_url_to_clipboard() end, { desc = "Copy [G]ithub URL" })
+vim.keymap.set("n", "<leader>cp", function() helpers.copy_permalink_to_clipboard() end, { desc = "Copy Github [P]ermalink" })
 
 
 -- Tab Keymaps
 vim.keymap.set("n", "<leader>tq", function() helpers.switch_to_tab(1) end, { desc = "Go to tab 1" })
 vim.keymap.set("n", "<leader>tw", function () helpers.switch_to_tab(2) end, { desc = "Go to tab 2" })
 vim.keymap.set("n", "<leader>tf", function() helpers.switch_to_tab(3) end, { desc = "Go to tab 3" })
+
+-- Scratch Keymaps
+vim.keymap.set("n", "<leader>as", function() helpers.open_scratch() end, { desc = "Generate [S]cratch File" })
 
 ------------------------------------------------------------------------------------------------------------
 
@@ -155,7 +158,7 @@ vim.api.nvim_create_autocmd("FileType", {
     if vim.bo.filetype ~= "" then
       vim.keymap.set(
         "n",
-        "<leader>cd",
+        "<leader>ad",
         vim.diagnostic.open_float,
         { desc = "Line Diagnostic", buffer = true }
       )

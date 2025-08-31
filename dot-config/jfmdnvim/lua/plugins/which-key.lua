@@ -20,15 +20,12 @@ return {
 
     -- Document existing key chains
     spec = {
-      { "<leader>f", group = "Arrow [F]iles", icon = ""},
-      { "<leader>m", group = "Arrow Buffer [M]arks", icon = ""},
-      { "<leader>c", group = "[C]ode", mode = { "n", "x" }, icon = "" },
+      { "<leader>a", group = "[A]ctions", mode = { "n", "x" }, icon = "" },
       { "<leader>t", group = "[T]abs", icon = "󰓩"},
       { "<leader>s", group = "[S]earch", icon = ""},
       { "<leader>g", group = "[G]it", icon = "", mode = { "n", "v" } },
-      { "<leader>q", group = "[Q]uit Session", icon = "" },
       { "<leader>l", "<CMD>Lazy<CR>", icon = "", desc = "[L]azy Plugin Manager" },
-      { "<leader>b", group = "Clip[B]oard", icon = "", mode = { "n", "v" } },
+      { "<leader>c", group = "[C]lipboard", icon = "", mode = { "n", "v" } },
     },
   },
 }
