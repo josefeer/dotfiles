@@ -219,7 +219,7 @@ function H.open_scratch()
     return
   end
 
-  local dir = "/tmp/jfmdnvim/scratch"
+  local dir = vim.fn.stdpath("data") .. "/scratch"
   local path = dir .. "/" .. filename
 
   -- ensure directory exists

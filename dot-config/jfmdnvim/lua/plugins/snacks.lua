@@ -26,7 +26,7 @@ return {
     { "<leader>s.", function() Snacks.picker.recent() end, desc = "Recent [.]" },
     { "<leader>sb", function() Snacks.picker.buffers() end, desc = "[B]uffers" },
     { "<leader>st", function() Snacks.picker.git_status() end, desc = "Git S[T]atus" },
-    { "<leader>ss", function() Snacks.picker.files({ cwd = vim.fn.expand("/tmp/jfmdnvim/scratch") }) end, desc = "[S]cratches" },
+    { "<leader>ss", function() Snacks.picker.files({ cwd = vim.fn.stdpath("data") .. "/scratch" }) end, desc = "[S]cratches" },
     --
     -- -- It's also possible to pass additional configuration options.
     -- --  See `:help telescope.builtin.live_grep()` for information about particular keys
