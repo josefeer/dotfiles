@@ -40,7 +40,6 @@
       # Random CLI
       "speedtest-cli"
       # DBs CLI
-      "mariadb"
       "postgresql"
     ];
   in {
