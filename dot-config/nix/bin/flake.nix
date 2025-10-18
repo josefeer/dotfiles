@@ -39,8 +39,6 @@
       "yazi"
       # Random CLI
       "speedtest-cli"
-      # DBs CLI
-      "postgresql"
     ];
   in {
     packages.${systems.aarch64} = pkgsAarch64.buildEnv {
