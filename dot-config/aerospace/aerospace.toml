@@ -100,16 +100,16 @@ ctrl-alt-shift-slash = 'layout tiles horizontal vertical'
 ctrl-alt-shift-comma = 'layout accordion horizontal vertical'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
-cmd-ctrl-alt-shift-m= 'focus left'
-cmd-ctrl-alt-shift-n= 'focus down'
-cmd-ctrl-alt-shift-e= 'focus up'
-cmd-ctrl-alt-shift-i= 'focus right'
+cmd-ctrl-alt-shift-left = 'focus left'
+cmd-ctrl-alt-shift-down = 'focus down'
+cmd-ctrl-alt-shift-up = 'focus up'
+cmd-ctrl-alt-shift-right = 'focus right'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move
-ctrl-alt-shift-m = 'move left'
-ctrl-alt-shift-n = 'move down'
-ctrl-alt-shift-e = 'move up'
-ctrl-alt-shift-i = 'move right'
+ctrl-alt-shift-left = 'move left'
+ctrl-alt-shift-down = 'move down'
+ctrl-alt-shift-up = 'move up'
+ctrl-alt-shift-right = 'move right'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#resize
 ctrl-alt-shift-minus = 'resize smart -100'
@@ -117,30 +117,32 @@ ctrl-alt-shift-equal = 'resize smart +100'
 ctrl-alt-shift-backtick = 'fullscreen --no-outer-gaps'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-cmd-ctrl-alt-shift-q = 'workspace 1'
-cmd-ctrl-alt-shift-w = 'workspace 2'
-cmd-ctrl-alt-shift-f = 'workspace 3'
-cmd-ctrl-alt-shift-p = 'workspace 4'
-cmd-ctrl-alt-shift-b = 'workspace 5'
-cmd-ctrl-alt-shift-j = 'workspace 6'
-cmd-ctrl-alt-shift-l = 'workspace 7'
-cmd-ctrl-alt-shift-u = 'workspace 8'
-cmd-ctrl-alt-shift-y = 'workspace 9'
-cmd-ctrl-alt-shift-semicolon = 'workspace 10'
+cmd-ctrl-alt-shift-c = 'workspace Communication'
+cmd-ctrl-alt-shift-d = 'workspace Database'
+cmd-ctrl-alt-shift-f = 'workspace Finder'
+cmd-ctrl-alt-shift-n = 'workspace Notes'
+cmd-ctrl-alt-shift-m = 'workspace Music'
+cmd-ctrl-alt-shift-o = 'workspace Other'
+cmd-ctrl-alt-shift-p = 'workspace Planning'
+cmd-ctrl-alt-shift-t = 'workspace Terminal'
+cmd-ctrl-alt-shift-w = 'workspace Web-Browser'
+cmd-ctrl-alt-shift-x = 'workspace X-Browser'
+cmd-ctrl-alt-shift-z = 'workspace Zoom'
 
 cmd-ctrl-alt-shift-tab = 'workspace-back-and-forth'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-ctrl-alt-shift-q = 'move-node-to-workspace 1'
-ctrl-alt-shift-w = 'move-node-to-workspace 2'
-ctrl-alt-shift-f = 'move-node-to-workspace 3'
-ctrl-alt-shift-p = 'move-node-to-workspace 4'
-ctrl-alt-shift-b = 'move-node-to-workspace 5'
-ctrl-alt-shift-j = 'move-node-to-workspace 6'
-ctrl-alt-shift-l = 'move-node-to-workspace 7'
-ctrl-alt-shift-u = 'move-node-to-workspace 8'
-ctrl-alt-shift-y = 'move-node-to-workspace 9'
-ctrl-alt-shift-semicolon = 'move-node-to-workspace 10'
+ctrl-alt-shift-c = 'move-node-to-workspace Communication'
+ctrl-alt-shift-d = 'move-node-to-workspace Database'
+ctrl-alt-shift-f = 'move-node-to-workspace Finder'
+ctrl-alt-shift-n = 'move-node-to-workspace Notes'
+ctrl-alt-shift-m = 'move-node-to-workspace Music'
+ctrl-alt-shift-o = 'move-node-to-workspace Other'
+ctrl-alt-shift-p = 'move-node-to-workspace Planning'
+ctrl-alt-shift-t = 'move-node-to-workspace Terminal'
+ctrl-alt-shift-w = 'move-node-to-workspace Web-Browser'
+ctrl-alt-shift-x = 'move-node-to-workspace X-Browser'
+ctrl-alt-shift-z = 'move-node-to-workspace Zoom'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 ctrl-alt-shift-s = 'mode service'
@@ -157,52 +159,63 @@ backspace = ['close-all-windows-but-current', 'mode main']
 # Apps
 [[on-window-detected]]
 if.app-id = 'com.todoist.mac.Todoist'
-run = 'move-node-to-workspace 1' # 1 - Productivity: Todoist
+run = 'move-node-to-workspace Planning'
 
 [[on-window-detected]]
 if.app-id = 'com.toggl.daneel'
-run = 'move-node-to-workspace 1' # 1 - Productivity: Toggl Track
+run = 'move-node-to-workspace Planning'
 
 [[on-window-detected]]
 if.app-id = 'com.flexibits.fantastical2.mac'
-run = 'move-node-to-workspace 1' # 1 - Calendar
+run = 'move-node-to-workspace Planning'
 
 [[on-window-detected]]
 if.app-id = 'obsidian.md'
-run = 'move-node-to-workspace 2' # 2 - Notes
+run = 'move-node-to-workspace Notes'
+
+[[on-window-detected]]
+if.app-id = 'md.obsidian'
+run = 'move-node-to-workspace Notes'
 
 [[on-window-detected]]
 if.app-id = 'app.zen-browser.zen'
-run = 'move-node-to-workspace 3' # Browser
+run = 'move-node-to-workspace Web-Browser'
 
 [[on-window-detected]]
 if.app-id = 'net.kovidgoyal.kitty'
-run = 'move-node-to-workspace 4' # 3 - Terminal
-
-# 5 Random - Empty Workspace
-
-# 6 Random - Empty Workspace
+run = 'move-node-to-workspace Terminal'
 
 [[on-window-detected]]
 if.app-id = 'com.tinyspeck.slackmacgap'
-run = 'move-node-to-workspace 7' # 7 - Comms: Slack
+run = 'move-node-to-workspace Communication'
 
 [[on-window-detected]]
 if.app-id = 'com.microsoft.teams2'
-run = 'move-node-to-workspace 7' # 7 - Comms: Microsoft Teams
+run = 'move-node-to-workspace Communication'
 
 [[on-window-detected]]
 if.app-id = 'com.google.Chrome'
-run = 'move-node-to-workspace 8' # 8 - DevTools: Google Chrome
+run = 'move-node-to-workspace X-Browser'
 
 [[on-window-detected]]
 if.app-id = 'org.mozilla.firefox'
-run = 'move-node-to-workspace 8' # 8 - DevTools: Mozilla Firefox
+run = 'move-node-to-workspace X-Browser'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Safari'
+run = 'move-node-to-workspace X-Browser'
 
 [[on-window-detected]]
 if.app-id = 'com.apple.finder'
-run = 'move-node-to-workspace 9' # 9 - File Manager
+run = 'move-node-to-workspace Finder'
 
 [[on-window-detected]]
 if.app-id = 'com.spotify.client'
-run = 'move-node-to-workspace 10' # 10 - Music
+run = 'move-node-to-workspace Music'
+
+[[on-window-detected]]
+if.app-id = 'com.navicat.NavicatPremiumLite'
+run = 'move-node-to-workspace Database'
+
+[[on-window-detected]]
+run = 'move-node-to-workspace Other'
