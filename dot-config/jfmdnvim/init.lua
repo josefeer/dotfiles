@@ -133,9 +133,6 @@ vim.keymap.set("n", "<leader>tq", function() helpers.switch_to_tab(1) end, { des
 vim.keymap.set("n", "<leader>tw", function () helpers.switch_to_tab(2) end, { desc = "Go to tab 2" })
 vim.keymap.set("n", "<leader>tf", function() helpers.switch_to_tab(3) end, { desc = "Go to tab 3" })
 
--- Scratch Keymaps
-vim.keymap.set("n", "<leader>as", function() helpers.open_scratch() end, { desc = "Generate [S]cratch File" })
-
 ------------------------------------------------------------------------------------------------------------
 
 -- [[ Basic Autocommands ]]

@@ -212,26 +212,4 @@ function H.copy_permalink_to_clipboard()
   vim.fn.setreg('+', url)
 end
 
-function H.open_scratch()
-  local filename = vim.fn.input("Scratch filename: ")
-  if filename == "" then
-    print("No filename entered")
-    return
-  end
-
-  local dir = vim.fn.stdpath("data") .. "/scratch"
-  local path = dir .. "/" .. filename
-
-  -- ensure directory exists
-  vim.fn.mkdir(dir, "p")
-
-   -- create file if not exists
-  if vim.fn.filereadable(path) == 0 then
-    vim.fn.writefile({}, path)
-  end
-
-  -- open file in buffer
-  vim.cmd("edit " .. vim.fn.fnameescape(path))
-end
-
 return H
