@@ -30,7 +30,7 @@ vim.g.loaded_netrw = 1 -- nvim-tree recommendation
 vim.g.loaded_netrwPlugin = 1 -- nvim-tree recommendation
 
 vim.opt.number = true
-vim.opt.relativenumber = true
+vim.opt.relativenumber = false
 vim.opt.mouse = "a"
 vim.opt.showmode = false -- Don't show the mode, since it's already in the status line
 vim.opt.breakindent = true
@@ -56,6 +56,7 @@ vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" } --  and `:help '
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.opt.foldmethod = "expr"
 vim.opt.foldlevel = 99 -- Keep folds open when opening files
+vim.opt.cmdheight = 0
 
 
 -- Sync clipboard between OS and Neovim.
