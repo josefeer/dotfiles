@@ -130,9 +130,6 @@ cmd-ctrl-alt-shift-v = 'workspace VM'
 cmd-ctrl-alt-shift-w = 'workspace Web-Browser'
 cmd-ctrl-alt-shift-x = 'workspace X-Browser'
 cmd-ctrl-alt-shift-z = 'workspace Zoom'
-cmd-ctrl-alt-shift-1 = 'workspace Space 1'
-cmd-ctrl-alt-shift-2 = 'workspace Space 2'
-cmd-ctrl-alt-shift-3 = 'workspace Space 3'
 
 cmd-ctrl-alt-shift-tab = 'workspace-back-and-forth'
 
@@ -150,9 +147,6 @@ ctrl-alt-shift-v = 'move-node-to-workspace VM'
 ctrl-alt-shift-w = 'move-node-to-workspace Web-Browser'
 ctrl-alt-shift-x = 'move-node-to-workspace X-Browser'
 ctrl-alt-shift-z = 'move-node-to-workspace Zoom'
-ctrl-alt-shift-1 = 'move-node-to-workspace Space 1'
-ctrl-alt-shift-2 = 'move-node-to-workspace Space 2'
-ctrl-alt-shift-3 = 'move-node-to-workspace Space 3'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 ctrl-alt-shift-s = 'mode service'
