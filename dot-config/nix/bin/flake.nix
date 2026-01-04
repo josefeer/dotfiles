@@ -31,12 +31,9 @@
       "neovim"
       "tmux"
       "yq"
+      "uv"
       # TUIs
       "lazygit"
-      "lazysql"
-      "lazydocker"
-      "jqp"
-      "yazi"
       # Random CLI
       "speedtest-cli"
     ];
