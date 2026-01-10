@@ -95,69 +95,69 @@ outer.right =      15
 # end tell'
 # '''
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#layout
-ctrl-alt-shift-slash = 'layout tiles horizontal vertical'
-ctrl-alt-shift-comma = 'layout accordion horizontal vertical'
-
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
-cmd-ctrl-alt-shift-left = 'focus left'
-cmd-ctrl-alt-shift-down = 'focus down'
-cmd-ctrl-alt-shift-up = 'focus up'
-cmd-ctrl-alt-shift-right = 'focus right'
+ctrl-alt-shift-left = 'focus left'
+ctrl-alt-shift-down = 'focus down'
+ctrl-alt-shift-up = 'focus up'
+ctrl-alt-shift-right = 'focus right'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move
-ctrl-alt-shift-left = 'move left'
-ctrl-alt-shift-down = 'move down'
-ctrl-alt-shift-up = 'move up'
-ctrl-alt-shift-right = 'move right'
+cmd-ctrl-alt-shift-left = 'move left'
+cmd-ctrl-alt-shift-down = 'move down'
+cmd-ctrl-alt-shift-up = 'move up'
+cmd-ctrl-alt-shift-right = 'move right'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#resize
-ctrl-alt-shift-minus = 'resize smart -100'
-ctrl-alt-shift-equal = 'resize smart +100'
-ctrl-alt-shift-backtick = 'fullscreen --no-outer-gaps'
+cmd-ctrl-alt-shift-minus = 'resize smart -100'
+cmd-ctrl-alt-shift-equal = 'resize smart +100'
+cmd-ctrl-alt-shift-backtick = 'fullscreen --no-outer-gaps'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-cmd-ctrl-alt-shift-c = 'workspace Communication'
-cmd-ctrl-alt-shift-d = 'workspace Database'
-cmd-ctrl-alt-shift-f = 'workspace Finder'
-cmd-ctrl-alt-shift-g = 'workspace Gato'
-cmd-ctrl-alt-shift-n = 'workspace Notes'
-cmd-ctrl-alt-shift-m = 'workspace Music'
-cmd-ctrl-alt-shift-o = 'workspace Other'
-cmd-ctrl-alt-shift-p = 'workspace Planning'
-cmd-ctrl-alt-shift-t = 'workspace Terminal'
-cmd-ctrl-alt-shift-v = 'workspace VM'
-cmd-ctrl-alt-shift-w = 'workspace Web-Browser'
-cmd-ctrl-alt-shift-x = 'workspace X-Browser'
-cmd-ctrl-alt-shift-z = 'workspace Zoom'
+ctrl-alt-shift-c = 'workspace Communication'
+ctrl-alt-shift-d = 'workspace Database'
+ctrl-alt-shift-f = 'workspace Finder'
+ctrl-alt-shift-g = 'workspace Gato'
+ctrl-alt-shift-n = 'workspace Notes'
+ctrl-alt-shift-m = 'workspace Music'
+ctrl-alt-shift-o = 'workspace Other'
+ctrl-alt-shift-p = 'workspace Planning'
+ctrl-alt-shift-t = 'workspace Terminal'
+ctrl-alt-shift-v = 'workspace VM'
+ctrl-alt-shift-w = 'workspace Web-Browser'
+ctrl-alt-shift-x = 'workspace X-Browser'
+ctrl-alt-shift-z = 'workspace Zoom'
 
-cmd-ctrl-alt-shift-tab = 'workspace-back-and-forth'
+# ctrl-alt-shift-tab = 'workspace-back-and-forth'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-ctrl-alt-shift-c = 'move-node-to-workspace Communication'
-ctrl-alt-shift-d = 'move-node-to-workspace Database'
-ctrl-alt-shift-f = 'move-node-to-workspace Finder'
-ctrl-alt-shift-g = 'move-node-to-workspace Gato'
-ctrl-alt-shift-n = 'move-node-to-workspace Notes'
-ctrl-alt-shift-m = 'move-node-to-workspace Music'
-ctrl-alt-shift-o = 'move-node-to-workspace Other'
-ctrl-alt-shift-p = 'move-node-to-workspace Planning'
-ctrl-alt-shift-t = 'move-node-to-workspace Terminal'
-ctrl-alt-shift-v = 'move-node-to-workspace VM'
-ctrl-alt-shift-w = 'move-node-to-workspace Web-Browser'
-ctrl-alt-shift-x = 'move-node-to-workspace X-Browser'
-ctrl-alt-shift-z = 'move-node-to-workspace Zoom'
+cmd-ctrl-alt-shift-c = 'move-node-to-workspace Communication'
+cmd-ctrl-alt-shift-d = 'move-node-to-workspace Database'
+cmd-ctrl-alt-shift-f = 'move-node-to-workspace Finder'
+cmd-ctrl-alt-shift-g = 'move-node-to-workspace Gato'
+cmd-ctrl-alt-shift-n = 'move-node-to-workspace Notes'
+cmd-ctrl-alt-shift-m = 'move-node-to-workspace Music'
+cmd-ctrl-alt-shift-o = 'move-node-to-workspace Other'
+cmd-ctrl-alt-shift-p = 'move-node-to-workspace Planning'
+cmd-ctrl-alt-shift-t = 'move-node-to-workspace Terminal'
+cmd-ctrl-alt-shift-v = 'move-node-to-workspace VM'
+cmd-ctrl-alt-shift-w = 'move-node-to-workspace Web-Browser'
+cmd-ctrl-alt-shift-x = 'move-node-to-workspace X-Browser'
+cmd-ctrl-alt-shift-z = 'move-node-to-workspace Zoom'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
-ctrl-alt-shift-s = 'mode service'
+cmd-ctrl-alt-shift-s = 'mode service'
 
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
+# See: https://nikitabobko.github.io/AeroSpace/commands#layout
 [mode.service.binding]
 esc = ['reload-config', 'mode main']
 r = ['flatten-workspace-tree', 'mode main'] # reset layout
 f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
+t = ['layout tiles horizontal vertical', 'mode main']
+a = ['layout accordion horizontal vertical', 'mode main']
+
 backspace = ['close-all-windows-but-current', 'mode main']
 
 # Apps
