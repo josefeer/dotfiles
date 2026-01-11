@@ -58,15 +58,6 @@ vim.opt.foldmethod = "expr"
 vim.opt.foldlevel = 99 -- Keep folds open when opening files
 vim.opt.cmdheight = 0
 
-
--- Sync clipboard between OS and Neovim.
---  Schedule the setting after `UiEnter` because it can increase startup-time.
---  Remove this option if you want your OS clipboard to remain independent.
---  See `:help 'clipboard'`
-vim.schedule(function()
-	vim.opt.clipboard = "unnamedplus"
-end)
-
 ------------------------------------------------------------------------------------------------------------
 
 --[[ Basic Imports ]]
@@ -121,6 +112,8 @@ end, { noremap = true, silent = true })
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open Oil" })
 
 -- Clipboard Keymaps
+vim.keymap.set({"n", "v"}, "<leader>y", '"+y', { desc = "Copy to system clipboard" })
+
 vim.keymap.set("n", "<leader>ca", "<cmd>let @+ = expand('%:p')<cr>", { desc = "Copy file [A]bsolute path" })
 vim.keymap.set("n", "<leader>cr", "<cmd>let @+ = expand('%:.')<cr>", { desc = "Copy file [R]elative path" })
 vim.keymap.set("n", "<leader>cg", function() helpers.copy_relative_path_with_repo_to_clipboard() end, { desc = "Copy file [G]it Relative path" })
