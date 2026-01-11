@@ -32,6 +32,7 @@
       "tmux"
       "yq"
       "uv"
+      "opencode"
       # TUIs
       "lazygit"
       # Random CLI
