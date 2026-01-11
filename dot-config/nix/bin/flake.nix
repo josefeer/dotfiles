@@ -13,40 +13,45 @@
     };
     pkgsAarch64 = import nixpkgs { system = systems.aarch64; };
     pkgsX86_64 = import nixpkgs { system = systems.x86_64; };
-    globalPackages = [
+
+    # Function to get packages for a specific pkgs instance
+    getPackages = pkgs: with pkgs; [
       # Core CLI
-      "git"
-      "curl"
-      "bat"
-      "eza"
-      "fzf"
-      "fd"
-      "htop"
-      "ripgrep"
-      "stow"
-      "zoxide"
+      git
+      curl
+      bat
+      eza
+      fzf
+      fd
+      htop
+      ripgrep
+      stow
+      zoxide
       # SWE Tooling
-      "gh"
-      "jq"
-      "neovim"
-      "tmux"
-      "yq"
-      "uv"
-      "opencode"
+      gh
+      jq
+      neovim
+      tmux
+      yq
+      uv
+      opencode
+      # LSP & Formatters
+      pyright
+      nodePackages.typescript-language-server
       # TUIs
-      "lazygit"
+      lazygit
       # Random CLI
-      "speedtest-cli"
+      speedtest-cli
     ];
   in {
     packages.${systems.aarch64} = pkgsAarch64.buildEnv {
       name = "system-wide-packages-${systems.aarch64}";
-      paths = builtins.map (pkg: pkgsAarch64.${pkg}) globalPackages;
+      paths = getPackages pkgsAarch64;
     };
 
     packages.${systems.x86_64} = pkgsX86_64.buildEnv {
       name = "system-wide-packages-${systems.x86_64}";
-      paths = builtins.map (pkg: pkgsX86_64.${pkg}) globalPackages;
+      paths = getPackages pkgsX86_64;
     };
   };
 }
