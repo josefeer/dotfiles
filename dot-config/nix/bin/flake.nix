@@ -38,6 +38,13 @@
       # LSP & Formatters
       pyright
       nodePackages.typescript-language-server
+      lua-language-server
+      # Neovim
+      tree-sitter
+      # Neovim Snacks Plugin
+      imagemagick
+      tectonic
+      mermaid-cli
       # TUIs
       lazygit
       # Random CLI
