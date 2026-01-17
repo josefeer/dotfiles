@@ -36,6 +36,13 @@ return {
         "toml",
         "typescript",
         "yaml",
+        "latex",
+        "svelte",
+        "tsx",
+        "typst",
+        "vue",
+        "regex",
+        -- "norg", problem compiling even on x86
       },
       -- Autoinstall languages that are not installed
       auto_install = true,

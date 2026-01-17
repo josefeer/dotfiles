@@ -112,7 +112,7 @@ end, { noremap = true, silent = true })
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open Oil" })
 
 -- Clipboard Keymaps
-vim.keymap.set({"n", "v"}, "<leader>y", '"+y', { desc = "Copy to system clipboard" })
+vim.keymap.set({"n", "v"}, "<leader>cy", '"+y', { desc = "Copy to system clipboard" })
 
 vim.keymap.set("n", "<leader>ca", "<cmd>let @+ = expand('%:p')<cr>", { desc = "Copy file [A]bsolute path" })
 vim.keymap.set("n", "<leader>cr", "<cmd>let @+ = expand('%:.')<cr>", { desc = "Copy file [R]elative path" })

@@ -175,29 +175,30 @@ return {
         -- See `:help lspconfig-all` for a list of all the pre-configured LSPs
         ts_ls = {},
         pyright = {},
-        -- lua_ls = {
+        lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
           -- capabilities = {},
-          -- settings = {
-          --   Lua = {
-          --     completion = {
-          --       callSnippet = "Replace",
-          --     },
+          settings = {
+            Lua = {
+              completion = {
+                -- callSnippet = "Replace",
+              },
               -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-              -- diagnostics = { disable = { 'missing-fields' } },
-        --     },
-        --   },
-        -- },
+              diagnostics = { disable = { 'missing-fields' } },
+            },
+          },
+        },
       }
 
       -- Ensure the servers and tools above are installed
       for server_name, server_config in pairs(servers) do
-          -- This handles overriding only values explicitly passed
-          -- by the server configuration above. Useful when disabling
-          -- certain features of an LSP (for example, turning off formatting for ts_ls)
-          server_config.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server_config.capabilities or {})
-          require("lspconfig")[server_name].setup(server_config)
+        -- This handles overriding only values explicitly passed
+        -- by the server configuration above. Useful when disabling
+        -- certain features of an LSP (for example, turning off formatting for ts_ls)
+        server_config.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server_config.capabilities or {})
+        vim.lsp.config(server_name, server_config)
+        vim.lsp.enable({server_name})
       end
 
     end,

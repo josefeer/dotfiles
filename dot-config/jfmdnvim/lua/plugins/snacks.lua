@@ -20,7 +20,7 @@ return {
     { "<leader>sf", function() Snacks.picker.files() end, desc = "Files" },
     { "<leader>sF", function() Snacks.picker.files({ignored = true, hidden = true}) end, desc = "Files All" },
     { "<leader>s,", function() Snacks.scratch.select() end, desc = "Select Scratch Buffer" },
-    { "<leader>,", function() Snacks.scratch() end, desc = "Scratch Buffer [,]" },
+    { "<leader>a,", function() Snacks.scratch() end, desc = "Scratch Buffer [,]" },
     { "<leader>s.", function() Snacks.picker.recent() end, desc = "Recent [.]" },
     { "<leader>s/", function() Snacks.picker.buffers() end, desc = "Buffers [/]" },
     { "<leader>sh", function() Snacks.picker.help() end, desc = "[H]elp Pages" },
