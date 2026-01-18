@@ -7,8 +7,8 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
+    branch = "master",
     event = "VeryLazy",
-    commit = "e947d35b",
     build = ":TSUpdate",
     main = "nvim-treesitter.configs", -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
