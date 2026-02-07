@@ -9,9 +9,7 @@ after-login-command = []
 # You can use it to add commands that run after AeroSpace startup.
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
-after-startup-command = [
-	'exec-and-forget borders active_color=0xff00ff99 inactive_color=0xffe1e3e4 width=5.0'
-]
+after-startup-command = []
 
 # Start AeroSpace at login
 start-at-login = true
@@ -232,3 +230,7 @@ run = 'move-node-to-workspace Gato'
 [[on-window-detected]]
 if.app-id = 'com.parallels.desktop.console'
 run = 'move-node-to-workspace VM'
+
+[[on-window-detected]]
+if.app-id = 'us.zoom.xos'
+run = 'move-node-to-workspace Zoom'

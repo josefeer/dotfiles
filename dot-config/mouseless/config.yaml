@@ -319,7 +319,7 @@ keymaps:
     right click: null
     right mouse button: V
     right mouse button (w/o overlay): null
-    show overlay: CommandLeft tap
+    show overlay: [CommandLeft, Shift, Space]
     subgrid nudge down:
     - D
     - K

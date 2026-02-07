@@ -37,7 +37,7 @@ return {
         "toml",
         "typescript",
         "yaml",
-        "latex",
+        -- "latex", problem on MacOS when tree-sitter installing using brew
         "svelte",
         "tsx",
         "typst",
