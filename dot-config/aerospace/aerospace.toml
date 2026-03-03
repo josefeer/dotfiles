@@ -152,43 +152,39 @@ a = ['layout accordion horizontal vertical', 'mode main']
 
 backspace = ['close-all-windows-but-current', 'mode main']
 
-# Apps
+# Planning
 [[on-window-detected]]
 if.app-id = 'com.todoist.mac.Todoist'
-run = 'move-node-to-workspace 2'
+run = 'move-node-to-workspace 1'
 
 [[on-window-detected]]
 if.app-id = 'com.toggl.daneel'
-run = 'move-node-to-workspace 2'
+run = 'move-node-to-workspace 1'
 
 [[on-window-detected]]
 if.app-id = 'com.flexibits.fantastical2.mac'
+run = 'move-node-to-workspace 1'
+
+# Notes
+[[on-window-detected]]
+if.app-id = 'obsidian.md'
 run = 'move-node-to-workspace 2'
 
 [[on-window-detected]]
-if.app-id = 'obsidian.md'
-run = 'move-node-to-workspace 8'
-
-[[on-window-detected]]
 if.app-id = 'md.obsidian'
-run = 'move-node-to-workspace 8'
+run = 'move-node-to-workspace 2'
 
+# Main Browser
 [[on-window-detected]]
 if.app-id = 'app.zen-browser.zen'
 run = 'move-node-to-workspace 3'
 
+# Terminal
 [[on-window-detected]]
 if.app-id = 'net.kovidgoyal.kitty'
 run = 'move-node-to-workspace 4'
 
-[[on-window-detected]]
-if.app-id = 'com.tinyspeck.slackmacgap'
-run = 'move-node-to-workspace 6'
-
-[[on-window-detected]]
-if.app-id = 'com.microsoft.teams2'
-run = 'move-node-to-workspace 6'
-
+# Dev Tools
 [[on-window-detected]]
 if.app-id = 'com.google.Chrome'
 run = 'move-node-to-workspace 7'
@@ -202,21 +198,40 @@ if.app-id = 'com.apple.Safari'
 run = 'move-node-to-workspace 7'
 
 [[on-window-detected]]
-if.app-id = 'com.apple.finder'
-run = 'move-node-to-workspace 1'
+if.app-id = 'com.navicat.NavicatPremiumLite'
+run = 'move-node-to-workspace 7'
 
 [[on-window-detected]]
-if.app-id = 'com.navicat.NavicatPremiumLite'
+if.app-id = 'org.jkiss.dbeaver.core.product'
 run = 'move-node-to-workspace 7'
 
 [[on-window-detected]]
 if.app-id = 'com.parallels.desktop.console'
 run = 'move-node-to-workspace 7'
 
+# Communication
 [[on-window-detected]]
-if.app-id = 'us.zoom.xos'
-run = 'move-node-to-workspace 6'
+if.app-id = 'com.tinyspeck.slackmacgap'
+run = 'move-node-to-workspace 8'
 
 [[on-window-detected]]
-if.app-id = 'com.apple.Safari.WebApp.04B6F9DA-DF49-4C33-A384-1D5591DF7BCB'
+if.app-id = 'com.microsoft.teams2'
+run = 'move-node-to-workspace 8'
+
+[[on-window-detected]]
+if.app-id = 'us.zoom.xos'
+run = 'move-node-to-workspace 8'
+
+# Finder
+[[on-window-detected]]
+if.app-id = 'com.apple.finder'
 run = 'move-node-to-workspace 9'
+
+# Music
+[[on-window-detected]]
+if.app-id = 'com.apple.Safari.WebApp.04B6F9DA-DF49-4C33-A384-1D5591DF7BCB'
+run = 'move-node-to-workspace 10'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Safari.WebApp.A932FE4A-F376-4194-A20D-5F6202636663'
+run = 'move-node-to-workspace 10'
