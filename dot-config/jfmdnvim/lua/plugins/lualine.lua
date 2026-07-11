@@ -8,7 +8,7 @@ return {
   "nvim-lualine/lualine.nvim",
   opts = {
     options = {
-      theme = "everforest",
+      theme = "ghostty-default-style-dark",
       globalstatus = 3, -- single status bar for all buffers
     },
     sections = {

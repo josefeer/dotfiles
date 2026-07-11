@@ -11,14 +11,11 @@
 --]]
 
 return {
-  'sainnhe/everforest',
+  "nkxxll/ghostty-default-style-dark.nvim",
   lazy = false,
   priority = 1000,
   config = function()
-    -- Optionally configure and load the colorscheme
-    -- directly inside the plugin declaration.
-    -- vim.g.everforest_enable_italic = true
-    vim.g.everforest_background = "hard"
-    vim.cmd.colorscheme('everforest')
+    require("ghostty-default-style-dark").setup({})
+    vim.cmd.colorscheme("ghostty-default-style-dark")
   end
 }
