@@ -37,7 +37,7 @@
       opencode
       # LSP & Formatters
       pyright
-      nodePackages.typescript-language-server
+      typescript-language-server
       lua-language-server
       # Neovim
       tree-sitter
