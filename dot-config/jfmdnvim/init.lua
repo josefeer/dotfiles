@@ -58,6 +58,9 @@ vim.opt.foldmethod = "expr"
 vim.opt.foldlevel = 99 -- Keep folds open when opening files
 vim.opt.cmdheight = 0
 
+-- Sync Neovim colorscheme with Terminal
+vim.opt.termguicolors = false
+
 ------------------------------------------------------------------------------------------------------------
 
 --[[ Basic Imports ]]
