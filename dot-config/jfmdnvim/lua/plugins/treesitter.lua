@@ -7,10 +7,8 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    branch = "main",
     event = "VeryLazy",
     build = ":TSUpdate",
-    main = "nvim-treesitter.config", -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     opts = {
       ensure_installed = {
@@ -44,6 +42,8 @@ return {
         "vue",
         "regex",
         -- "norg", problem compiling even on x86
+        "markdown",
+        "markdown_inline"
       },
       -- Autoinstall languages that are not installed
       auto_install = true,
