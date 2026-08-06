@@ -34,7 +34,7 @@
       tmux
       yq
       uv
-      opencode
+      pi-coding-agent
       # LSP & Formatters
       pyright
       typescript-language-server
