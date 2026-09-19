@@ -1,5 +1,6 @@
-# Place a copy of this config to ~/.aerospace.toml
-# After that, you can edit ~/.aerospace.toml to your liking
+# Config version for compatibility and deprecations.
+# Version 2 requires persistent workspaces to be declared explicitly.
+config-version = 2
 
 # You can use it to add commands that run after login to macOS user session.
 # 'start-at-login' needs to be 'true' for 'after-login-command' to work
@@ -42,6 +43,10 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 # Useful if you don't use this macOS feature, but accidentally hit cmd-h or cmd-alt-h key
 # Also see: https://nikitabobko.github.io/AeroSpace/goodies#disable-hide-app
 automatically-unhide-macos-hidden-apps = true
+
+# Keep the numbered workspaces available even when they have no windows.
+# This preserves the workspace behavior previously inferred by config version 1.
+persistent-workspaces = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
 
 # Possible values: (qwerty|dvorak)
 # See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
@@ -161,18 +166,10 @@ if.app-id = 'com.todoist.mac.Todoist'
 run = 'move-node-to-workspace 1'
 
 [[on-window-detected]]
-if.app-id = 'com.toggl.daneel'
-run = 'move-node-to-workspace 1'
-
-[[on-window-detected]]
 if.app-id = 'com.flexibits.fantastical2.mac'
 run = 'move-node-to-workspace 1'
 
 # Notes
-[[on-window-detected]]
-if.app-id = 'obsidian.md'
-run = 'move-node-to-workspace 2'
-
 [[on-window-detected]]
 if.app-id = 'md.obsidian'
 run = 'move-node-to-workspace 2'
@@ -191,21 +188,30 @@ run = 'move-node-to-workspace 3'
 if.app-id = 'net.kovidgoyal.kitty'
 run = 'move-node-to-workspace 4'
 
-# Dev Tools
+[[on-window-detected]]
+if.app-id = 'com.mitchellh.ghostty'
+run = 'move-node-to-workspace 4'
+
+[[on-window-detected]]
+if.app-id = 'com.cmuxterm.app'
+run = 'move-node-to-workspace 4'
+
+# Secondary Browsers
 [[on-window-detected]]
 if.app-id = 'com.google.Chrome'
-run = 'move-node-to-workspace 7'
+run = 'move-node-to-workspace 6'
 
 [[on-window-detected]]
 if.app-id = 'org.mozilla.firefox'
-run = 'move-node-to-workspace 7'
+run = 'move-node-to-workspace 6'
 
 [[on-window-detected]]
 if.app-id = 'com.apple.Safari'
-run = 'move-node-to-workspace 7'
+run = 'move-node-to-workspace 6'
 
+# Dev Tools
 [[on-window-detected]]
-if.app-id = 'com.navicat.NavicatPremiumLite'
+if.app-id = 'com.dbpro.app'
 run = 'move-node-to-workspace 7'
 
 [[on-window-detected]]
@@ -236,9 +242,5 @@ run = 'move-node-to-workspace 9'
 
 # Music
 [[on-window-detected]]
-if.app-id = 'com.apple.Safari.WebApp.04B6F9DA-DF49-4C33-A384-1D5591DF7BCB'
-run = 'move-node-to-workspace 10'
-
-[[on-window-detected]]
-if.app-id = 'com.apple.Safari.WebApp.A932FE4A-F376-4194-A20D-5F6202636663'
+if.app-id = 'com.spotify.client'
 run = 'move-node-to-workspace 10'
