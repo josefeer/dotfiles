@@ -1,0 +1,7 @@
+# cmux's embedded Ghostty reads this file too.
+# Use one unprefixed theme because cmux does not reliably honor split
+# light/dark theme syntax yet.
+theme = Ghostty Default Style Dark
+
+# font-family = SF Mono
+# font-size = 13

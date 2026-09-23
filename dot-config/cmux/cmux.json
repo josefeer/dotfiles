@@ -1,0 +1,60 @@
+{
+  "$schema": "https://raw.githubusercontent.com/manaflow-ai/cmux/main/web/data/cmux.schema.json",
+  "schemaVersion": 1,
+
+  "app": {
+    "minimalMode": true,            // hide workspace title bar, controls move to sidebar
+    "reorderOnNotification": false, // keep vertical tab order stable (tmux muscle memory)
+    "sendAnonymousTelemetry": false,
+    "warnBeforeClosingTabXButton": true // guard against killing a live remote session
+  },
+
+  "terminal": {
+    "autoResumeAgentSessions": false,   // don't auto-relaunch agent sessions
+    "showTextBoxOnNewTerminals": false, // plain terminal input, not the beta rich box
+    "focusTextBoxOnNewTerminals": false,
+    "copyOnSelect": true,               // optional; tmux mouse mode may make this redundant
+    "showScrollBar": false
+  },
+
+  "automation": {
+    "claudeCodeIntegration": false,
+    "ampIntegration": false,
+    "cursorIntegration": false,
+    "geminiIntegration": false,
+    "kiroIntegration": false,
+    "workspaceAutoNaming": false        // no AI tab renaming
+  },
+
+  "notifications": {
+    "agentPermissionPrompt": false,
+    "agentTurnComplete": "never",
+    "agentIdleReminder": false,
+    "sound": "none",
+    "dockBadge": false
+  },
+
+  "sidebar": {
+    "showAgentActivity": false,       // no agent spinner
+    "showPullRequests": false,
+    "showLog": false,
+    "showProgress": false,
+    "showNotificationMessage": false
+    // left on: SSH details, listening ports, git branch — useful for remote work
+  },
+
+  "browser": {
+    "openTerminalLinksInCmuxBrowser": false,        // links open in system browser
+    "interceptTerminalOpenCommandInCmuxBrowser": false
+  },
+
+  "shortcuts": {
+    "bindings": {
+      "openBrowser": null,             // unbind browser keys so no browser pane spawns
+      "newBrowserWorkspace": null,
+      "splitBrowserRight": null,
+      "splitBrowserDown": null,
+      "reopenClosedBrowserPanel": null
+    }
+  }
+}
