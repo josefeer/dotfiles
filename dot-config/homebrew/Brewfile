@@ -1,7 +1,7 @@
-tap "homebrew/bundle"
-tap "homebrew/services"
-tap "jesseduffield/lazygit"
-tap "teamookla/speedtest"
+tap "felixkratz/formulae", trusted: true
+tap "nikitabobko/tap", trusted: true
+tap "noahgorstein/tap", trusted: true
+tap "teamookla/speedtest", trusted: true
 
 brew "bat"
 brew "curl"
@@ -14,16 +14,21 @@ brew "htop"
 brew "imagemagick"
 brew "jq"
 brew "lazygit"
+brew "tree-sitter"
 brew "neovim"
+brew "node"
+brew "pi-coding-agent"
 brew "python@3.11"
 brew "ripgrep"
 brew "stow"
-brew "tectonic"
 brew "tmux"
-brew "tree-sitter"
+brew "tree-sitter-cli"
 brew "yq"
 brew "zoxide"
 brew "teamookla/speedtest/speedtest"
 
-cask "aerospace"
-cask "zen-browser"
+cask "nikitabobko/tap/aerospace"
+cask "cmux"
+cask "ghostty"
+cask "kitty"
+cask "zen"
