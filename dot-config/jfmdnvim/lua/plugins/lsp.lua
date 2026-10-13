@@ -22,6 +22,10 @@ return {
     -- Main LSP Configuration
     "neovim/nvim-lspconfig",
     dependencies = {
+      -- Install language servers into Neovim's data directory on both macOS and Linux.
+      { "mason-org/mason.nvim", opts = {} },
+      "mason-org/mason-lspconfig.nvim",
+
       -- Useful status updates for LSP.
       { "j-hui/fidget.nvim", opts = {} },
 
@@ -50,7 +54,7 @@ return {
       --  - and more!
       --
       -- Thus, Language Servers are external tools that must be installed separately from
-      -- Neovim. This is where `mason` and related plugins come into play.
+      -- Neovim. Mason installs the servers configured below.
       --
       -- If you're wondering about lsp vs treesitter, you can check out the wonderfully
       -- and elegantly composed help section, `:help lsp-vs-treesitter`
@@ -173,8 +177,12 @@ return {
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         -- See `:help lspconfig-all` for a list of all the pre-configured LSPs
-        ts_ls = {},
         pyright = {},
+        ts_ls = {},
+        html = {},
+        cssls = {},
+        gopls = {},
+        rust_analyzer = {},
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
@@ -191,14 +199,18 @@ return {
         },
       }
 
-      -- Ensure the servers and tools above are installed
+      require("mason-lspconfig").setup({
+        ensure_installed = vim.tbl_keys(servers),
+        automatic_enable = false, -- Keep capabilities and overrides configured in the loop below.
+      })
+
       for server_name, server_config in pairs(servers) do
         -- This handles overriding only values explicitly passed
         -- by the server configuration above. Useful when disabling
         -- certain features of an LSP (for example, turning off formatting for ts_ls)
         server_config.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server_config.capabilities or {})
         vim.lsp.config(server_name, server_config)
-        vim.lsp.enable({server_name})
+        vim.lsp.enable(server_name)
       end
 
     end,
