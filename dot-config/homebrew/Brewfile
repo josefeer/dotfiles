@@ -28,7 +28,5 @@ brew "zoxide"
 brew "teamookla/speedtest/speedtest"
 
 cask "nikitabobko/tap/aerospace"
-cask "cmux"
-cask "ghostty"
-cask "kitty"
+cask "ghostty@tip"
 cask "zen"
