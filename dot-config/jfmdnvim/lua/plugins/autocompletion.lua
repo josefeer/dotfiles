@@ -19,6 +19,11 @@ return {
     local cmp = require("cmp")
 
     cmp.setup({
+      snippet = {
+        expand = function(args)
+          vim.snippet.expand(args.body)
+        end,
+      },
       completion = { completeopt = "menu,menuone,noinsert" },
 
       -- For an understanding of why these mappings were

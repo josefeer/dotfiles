@@ -16,7 +16,10 @@ vim.g.maplocalleader = " "
 -- Disable unused providers
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_ruby_provider = 0
-vim.g.python3_host_prog = '/home/jose/.nvim-venv/bin/python3'
+local python_host = vim.fn.expand("~/.nvim-venv/bin/python3")
+if vim.fn.executable(python_host) == 1 then
+  vim.g.python3_host_prog = python_host
+end
 
 ------------------------------------------------------------------------------------------------------------
 
@@ -72,7 +75,7 @@ local fallbacks = require("fallbacks")
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
-vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlights" })
 
 --  Keybinds to make split navigation easier.
 --  See `:help wincmd` for a list of all window commands
@@ -91,22 +94,22 @@ vim.keymap.set("n", "<C-w>c", "<cmd>tabclose<CR>", { desc = "Close Tab"})
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
 -- Keep ; and , functionality when using arrow.nvim for f & t
-vim.keymap.set("n", "<C-;>", ";", { noremap = true, silent = true })
-vim.keymap.set("n", "<C-,>", ",", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-;>", ";", { noremap = true, silent = true, desc = "Repeat last character search" })
+vim.keymap.set("n", "<C-,>", ",", { noremap = true, silent = true, desc = "Reverse last character search" })
 
 -- My keymaps for cursor always centered
-vim.keymap.set("n", "<C-d>", "<C-d>zz^")
-vim.keymap.set("n", "<C-u>", "<C-u>zz^")
-vim.keymap.set("n", "<C-o>", "<C-o>zz")
-vim.keymap.set("n", "<C-i>", "<C-i>zz")
-vim.keymap.set("n", "*", "*zz")
-vim.keymap.set("n", "n", "nzz")
-vim.keymap.set("n", "<S-n>", "<S-n>zz")
-vim.keymap.set("n", "<C-e>", "<C-e>j^")
-vim.keymap.set("n", "<C-y>", "<C-y>k^")
-vim.keymap.set('n', '<C-f>', function()
-  vim.cmd('silent !tmux neww ~/.config/tmux/scripts/tmux-sessionizer.sh')
-end, { noremap = true, silent = true })
+vim.keymap.set("n", "<C-d>", "<C-d>zz^", { desc = "Scroll down and center cursor" })
+vim.keymap.set("n", "<C-u>", "<C-u>zz^", { desc = "Scroll up and center cursor" })
+vim.keymap.set("n", "<C-o>", "<C-o>zz", { desc = "Jump backward and center cursor" })
+vim.keymap.set("n", "<C-i>", "<C-i>zz", { desc = "Jump forward and center cursor" })
+vim.keymap.set("n", "*", "*zz", { desc = "Search word forward and center cursor" })
+vim.keymap.set("n", "n", "nzz", { desc = "Next search result and center cursor" })
+vim.keymap.set("n", "<S-n>", "<S-n>zz", { desc = "Previous search result and center cursor" })
+vim.keymap.set("n", "<C-e>", "<C-e>j^", { desc = "Scroll down one line" })
+vim.keymap.set("n", "<C-y>", "<C-y>k^", { desc = "Scroll up one line" })
+vim.keymap.set("n", "<C-f>", function()
+  vim.cmd("silent !tmux neww ~/.config/tmux/scripts/tmux-sessionizer.sh")
+end, { noremap = true, silent = true, desc = "Open tmux sessionizer" })
 
 -- Oil Keymaps
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open Oil" })
