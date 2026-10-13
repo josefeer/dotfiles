@@ -35,10 +35,6 @@
       yq
       uv
       pi-coding-agent
-      # LSP & Formatters
-      pyright
-      typescript-language-server
-      lua-language-server
       # Neovim
       tree-sitter
       # Neovim Snacks Plugin
