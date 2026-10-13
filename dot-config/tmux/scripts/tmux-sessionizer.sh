@@ -1,61 +1,51 @@
 #!/bin/bash
 
-# Exit if tmux is not installed
-if ! command -v tmux &> /dev/null; then
-    echo "tmux is not installed. Exiting."
-    exit 1
+if ! command -v tmux >/dev/null 2>&1 || ! command -v fzf >/dev/null 2>&1; then
+  printf 'tmux and fzf are required.\n' >&2
+  exit 1
 fi
 
-default_find_line='~ -mindepth 1 -maxdepth 1 -type d'
 extra_find_file="$HOME/.tmux-sessionizer-extra-finds"
 
-# Example on how .tmux-sessionizer-extra-finds should looks like.
-# Each line should contain a directory followed by its find options.
-#
-# ~/Developer -mindepth 1 -maxdepth 1 -type d
-# ~/Worktrees -mindepth 1 -maxdepth 3 -type d
+# Each line: ~/Developer -mindepth 1 -maxdepth 1 -type d
+# Paths may contain spaces; only numeric depths and directory searches are accepted.
+find_directories() {
+  find "$HOME" -mindepth 1 -maxdepth 1 -type d -print0
+  [[ -f "$extra_find_file" ]] || return 0
 
-
-# Build results from default command and extra config file
-results=$(
-  {
-    eval "find $default_find_line"
-    # If the config file exists, process each line.
-    if [[ -f "$extra_find_file" ]]; then
-      while IFS= read -r line || [[ -n $line ]]; do
-        # Skip empty lines and comments
-        [[ -z "$line" || "$line" =~ ^# ]] && continue
-        # Execute the find command defined on this line.
-        eval "find $line"
-      done < "$extra_find_file"
+  local line directory min_depth max_depth
+  while IFS= read -r line || [[ -n "$line" ]]; do
+    [[ "$line" =~ ^[[:space:]]*(#|$) ]] && continue
+    if [[ ! "$line" =~ ^(.+)[[:space:]]+-mindepth[[:space:]]+([0-9]+)[[:space:]]+-maxdepth[[:space:]]+([0-9]+)[[:space:]]+-type[[:space:]]+d[[:space:]]*$ ]]; then
+      printf 'Ignoring invalid find rule: %s\n' "$line" >&2
+      continue
     fi
-  }
-)
 
-selected=$(echo "$results" | fzf)
-[[ -z "$selected" ]] && exit 0
+    directory="${BASH_REMATCH[1]}"
+    min_depth="${BASH_REMATCH[2]}"
+    max_depth="${BASH_REMATCH[3]}"
+    case "$directory" in
+      "~/"*) directory="$HOME/${directory#\~/}" ;;
+      /*) ;;
+      *) directory="$HOME/$directory" ;;
+    esac
+    if [[ -d "$directory" ]]; then
+      find "$directory" -mindepth "$min_depth" -maxdepth "$max_depth" -type d -print0
+    fi
+  done < "$extra_find_file"
+}
 
-# Derive a session name from the selected directory, then
-#   remove any leading dot
-selected_name=$(basename "$selected")
-selected_name=${selected_name#.}
+IFS= read -r -d '' selected < <(find_directories | fzf --read0 --print0) || exit 0
 
-# Start the tmux server if tmux is not already running
-if ! pgrep tmux &> /dev/null; then
-    tmux start-server
+selected_name="${selected##*/}"
+selected_name="${selected_name#.}"
+
+if ! tmux has-session -t "=$selected_name" 2>/dev/null; then
+  tmux new-session -ds "$selected_name" -c "$selected" || exit 1
 fi
 
-# If not already inside a tmux session, create or attach the session
-if [[ -z $TMUX ]]; then
-    # Create a new session if it doesn't exist, or attach if it does
-    if ! tmux has-session -t "$selected_name" 2>/dev/null; then
-        tmux new-session -ds "$selected_name" -c "$selected"
-    fi
-    tmux attach-session -t "$selected_name"
+if [[ -n "$TMUX" ]]; then
+  tmux switch-client -t "=$selected_name"
 else
-    # We're already in a tmux session; switch to or create the target session
-    if ! tmux has-session -t "$selected_name" 2>/dev/null; then
-        tmux new-session -ds "$selected_name" -c "$selected"
-    fi
-    tmux switch-client -t "$selected_name"
+  tmux attach-session -t "=$selected_name"
 fi
