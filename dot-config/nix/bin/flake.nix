@@ -31,6 +31,10 @@
       gh
       jq
       neovim
+      nodejs
+      go
+      rustc
+      cargo
       tmux
       yq
       uv
