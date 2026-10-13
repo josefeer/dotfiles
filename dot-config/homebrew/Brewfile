@@ -27,6 +27,8 @@ brew "tmux"
 brew "tree-sitter-cli"
 brew "yq"
 brew "zoxide"
+brew "zsh-autosuggestions"
+brew "zsh-syntax-highlighting"
 brew "teamookla/speedtest/speedtest"
 
 cask "nikitabobko/tap/aerospace"

@@ -27,6 +27,8 @@
       ripgrep
       stow
       zoxide
+      zsh-autosuggestions
+      zsh-syntax-highlighting
       # SWE Tooling
       gh
       jq
