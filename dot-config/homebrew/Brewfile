@@ -1,37 +1,46 @@
+# Homebrew taps
 tap "felixkratz/formulae", trusted: true
 tap "nikitabobko/tap", trusted: true
 tap "noahgorstein/tap", trusted: true
 tap "teamookla/speedtest", trusted: true
 
-brew "bat"
-brew "curl"
-brew "eza"
-brew "fd"
-brew "fzf"
-brew "gh"
+# Core CLI binaries
 brew "git"
-brew "go"
+brew "curl"
+brew "bat"
+brew "eza"
+brew "fzf"
+brew "fd"
 brew "htop"
-brew "imagemagick"
-brew "jq"
-brew "lazygit"
-brew "tree-sitter"
-brew "neovim"
-brew "node"
-brew "pi-coding-agent"
-brew "python@3.11"
 brew "ripgrep"
-brew "rust"
 brew "stow"
-brew "tmux"
-brew "tree-sitter-cli"
-brew "yq"
 brew "zoxide"
 brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
+
+# Development tools
+brew "gh"
+brew "jq"
+brew "neovim"
+brew "node"
+brew "go"
+brew "rust"
+brew "python@3.11"
+brew "tmux"
+brew "yq"
+brew "pi-coding-agent"
+
+# Neovim dependencies
+brew "tree-sitter"
+brew "tree-sitter-cli"
+brew "imagemagick"
+
+# Terminal apps and other CLI tools
+brew "lazygit"
 brew "teamookla/speedtest/speedtest"
 brew "todoist-cli"
 
+# macOS apps
 cask "nikitabobko/tap/aerospace"
 cask "ghostty@tip"
 cask "zen"
