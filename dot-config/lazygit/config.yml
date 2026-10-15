@@ -3,8 +3,3 @@ os:
 notARepository: skip
 git:
     disableForcePushing: true
-keybinding:
-    universal:
-        pushFiles: <disabled>
-    branches:
-        pushTag: <disabled>
