@@ -45,7 +45,6 @@
       tree-sitter
       # Neovim Snacks Plugin
       imagemagick
-      tectonic
       mermaid-cli
       # TUIs
       lazygit
