@@ -20,14 +20,24 @@ Clone this repository in your home directory.
    ```conf
    experimental-features = nix-command flakes
    ```
-3. From `~/.dotfiles/dot-config/nix/bin`, install the packages in `flake.nix`:
+3. Install the CLI packages (once):
 
    ```bash
-   # Use aarch64-linux instead on ARM machines.
-   nix profile install .#packages.x86_64-linux
+   cd ~/.dotfiles/dot-config/nix/cli
+   nix profile install .#default
    ```
 
-   After committing changes to the flake, update the installed profile with `nix profile upgrade --all` (this upgrades every package in your Nix profile). To update versions in `flake.lock`, run `nix flake update` separately.
+4. To update the CLI packages later, run these commands from the same directory:
+
+   ```bash
+   cd ~/.dotfiles/dot-config/nix/cli
+   nix flake update nixpkgs
+   nix flake check --no-build
+   nix profile upgrade 'dot-config/nix/cli'
+   ```
+
+   `nix flake update nixpkgs` updates `flake.lock`; skip it if you only changed the package list. `nix profile upgrade` applies the current flake to the installed profile entry. If the upgrade name differs, find it with `nix profile list`. Avoid `--all` unless you want to upgrade every package in your profile.
+
 ### Finally
 
 From the `~/.dotfiles` directory, run:

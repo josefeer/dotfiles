@@ -1,20 +1,14 @@
 {
-  description = "System-wide packages for Linux";
+  description = "JFMD cli tools in Linux";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   };
 
-  outputs = { self, nixpkgs }:
+  outputs = { nixpkgs, ... }:
   let
-    systems = {
-      aarch64 = "aarch64-linux";
-      x86_64 = "x86_64-linux";
-    };
-    pkgsAarch64 = import nixpkgs { system = systems.aarch64; };
-    pkgsX86_64 = import nixpkgs { system = systems.x86_64; };
+    systems = [ "aarch64-linux" "x86_64-linux" ];
 
-    # Function to get packages for a specific pkgs instance
     getPackages = pkgs: with pkgs; [
       # Core CLI
       git
@@ -52,14 +46,13 @@
       speedtest-cli
     ];
   in {
-    packages.${systems.aarch64} = pkgsAarch64.buildEnv {
-      name = "system-wide-packages-${systems.aarch64}";
-      paths = getPackages pkgsAarch64;
-    };
-
-    packages.${systems.x86_64} = pkgsX86_64.buildEnv {
-      name = "system-wide-packages-${systems.x86_64}";
-      paths = getPackages pkgsX86_64;
-    };
+    packages = nixpkgs.lib.genAttrs systems (system:
+      let pkgs = import nixpkgs { inherit system; };
+      in {
+        default = pkgs.buildEnv {
+          name = "jfmdnixcli";
+          paths = getPackages pkgs;
+        };
+      });
   };
 }
