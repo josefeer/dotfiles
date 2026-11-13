@@ -2,7 +2,7 @@
   description = "JFMD cli tools in Linux";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   };
 
   outputs = { nixpkgs, ... }:
@@ -44,6 +44,7 @@
       lazygit
       # Random CLI
       speedtest-cli
+      wireguard-tools
     ];
   in {
     packages = nixpkgs.lib.genAttrs systems (system:
