@@ -3,5 +3,5 @@
 # light/dark theme syntax yet.
 theme = Ghostty Default Style Dark
 
-# font-family = SF Mono
+font-family = JetBrainsMono Nerd Font
 # font-size = 13
