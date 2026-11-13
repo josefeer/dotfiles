@@ -41,6 +41,9 @@ brew "teamookla/speedtest/speedtest"
 brew "todoist-cli"
 brew "wireguard-tools"
 
+# Fonts
+cask "font-jetbrains-mono-nerd-font"
+
 # macOS apps
 cask "1password"
 cask "1password-cli"
