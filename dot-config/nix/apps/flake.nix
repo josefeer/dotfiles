@@ -36,12 +36,12 @@
               pkgs.obsidian
               pkgs.proton-vpn
               pkgs.todoist-electron
-              openlogi.packages.${system}.default
               zen-browser.packages.${system}.default
               # pkgs.ghostty # GPU drivers are flaky when installed via Nix
               # pkgs.firefox # Already bundled with ubuntu and fedora
               # pkgs.teams-for-linux # Unofficial client
               # pkgs.tailscale # Requires a system-managed tailscaled service, not just this app bundle.
+              # openlogi.packages.${system}.default # Requires compilation from source that takes too much time
             ] ++ nixpkgs.lib.optionals (system == "x86_64-linux") [
               # x86_64-only binaries.
               pkgs.keymapp
