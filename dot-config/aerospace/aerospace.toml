@@ -15,7 +15,7 @@ after-login-command = []
 after-startup-command = [
   'layout --workspace "DevTools(7)" --root accordion',
   'layout --workspace "Comms(8)" --root accordion',
-  'layout --workspace "Finder(2)" --root accordion',
+  'layout --workspace "Finder(1)" --root accordion',
 ]
 
 # Start AeroSpace at login
@@ -52,7 +52,7 @@ automatically-unhide-macos-hidden-apps = true
 
 # AeroSpace forbids spaces in workspace names, so keep shortcut hints adjacent.
 # Keep workspaces available even when they have no windows.
-persistent-workspaces = ['1', 'Finder(2)', 'Planning(3)', 'Notes(4)', '5', '6', 'DevTools(7)', 'Comms(8)', 'Music(9)', '0', 'Terminal', 'Web']
+persistent-workspaces = ['Finder(1)', 'Planning(2)', 'Notes(3)', 'Web(4)', '5', '6', 'DevTools(7)', 'Comms(8)', 'Music(9)', '0', 'Terminal']
 
 # Possible values: (qwerty|dvorak)
 # See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
@@ -96,11 +96,9 @@ outer.right =      15
 # All possible commands: https://nikitabobko.github.io/AeroSpace/commands
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
-# Dedicated terminal (Terminal) and main web browser (Web) workspaces.
+# Dedicated terminal (Terminal) workspace.
 alt-enter = 'workspace Terminal'
 alt-shift-enter = 'move-node-to-workspace Terminal'
-alt-space = 'workspace Web'
-alt-shift-space = 'move-node-to-workspace Web'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
 alt-slash = 'layout tiles horizontal vertical'
@@ -132,10 +130,10 @@ alt-shift-minus = 'balance-sizes'
 alt-f = 'fullscreen'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-alt-1 = 'workspace 1'
-alt-2 = 'workspace "Finder(2)"'
-alt-3 = 'workspace "Planning(3)"'
-alt-4 = 'workspace "Notes(4)"'
+alt-1 = 'workspace "Finder(1)"'
+alt-2 = 'workspace "Planning(2)"'
+alt-3 = 'workspace "Notes(3)"'
+alt-4 = 'workspace "Web(4)"'
 alt-5 = 'workspace 5'
 alt-6 = 'workspace 6'
 alt-7 = 'workspace "DevTools(7)"'
@@ -144,10 +142,10 @@ alt-9 = 'workspace "Music(9)"'
 alt-0 = 'workspace 0'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-alt-shift-1 = 'move-node-to-workspace 1'
-alt-shift-2 = 'move-node-to-workspace "Finder(2)"'
-alt-shift-3 = 'move-node-to-workspace "Planning(3)"'
-alt-shift-4 = 'move-node-to-workspace "Notes(4)"'
+alt-shift-1 = 'move-node-to-workspace "Finder(1)"'
+alt-shift-2 = 'move-node-to-workspace "Planning(2)"'
+alt-shift-3 = 'move-node-to-workspace "Notes(3)"'
+alt-shift-4 = 'move-node-to-workspace "Web(4)"'
 alt-shift-5 = 'move-node-to-workspace 5'
 alt-shift-6 = 'move-node-to-workspace 6'
 alt-shift-7 = 'move-node-to-workspace "DevTools(7)"'
@@ -229,32 +227,32 @@ run = 'layout floating'
 [[on-window-detected]]
 if.app-id = 'com.apple.finder'
 if.window-title-regex-substring = ' Info$'
-run = ['layout floating', 'move-node-to-workspace "Finder(2)"']
+run = ['layout floating', 'move-node-to-workspace "Finder(1)"']
 
 # Managed Windows
 # Finder
 [[on-window-detected]]
 if.app-id = 'com.apple.finder'
-run = 'move-node-to-workspace "Finder(2)"'
+run = 'move-node-to-workspace "Finder(1)"'
 
 # Planning
 [[on-window-detected]]
 if.app-id = 'com.apple.iCal'
-run = 'move-node-to-workspace "Planning(3)"'
+run = 'move-node-to-workspace "Planning(2)"'
 
 [[on-window-detected]]
 if.app-id = 'com.todoist.mac.Todoist'
-run = 'move-node-to-workspace "Planning(3)"'
+run = 'move-node-to-workspace "Planning(2)"'
 
 # Notes
 [[on-window-detected]]
 if.app-id = 'md.obsidian'
-run = 'move-node-to-workspace "Notes(4)"'
+run = 'move-node-to-workspace "Notes(3)"'
 
 # Main Browser
 [[on-window-detected]]
 if.app-id = 'app.zen-browser.zen'
-run = 'move-node-to-workspace Web'
+run = 'move-node-to-workspace "Web(4)"'
 
 # Terminal
 [[on-window-detected]]
