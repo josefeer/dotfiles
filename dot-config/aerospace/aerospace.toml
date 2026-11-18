@@ -291,10 +291,12 @@ run = 'move-node-to-workspace "Comms(8)"'
 
 # Zoom: tile the main app and meeting windows; float its popups (settings, chat,
 # participants, share picker...) on the same workspace.
+# AeroSpace's heuristics classify the meeting window as a dialog and float it, so
+# force tiling explicitly. Titles vary ("Zoom Meeting", "Zoom Meeting 40-Minutes"...).
 [[on-window-detected]]
 if.app-id = 'us.zoom.xos'
-if.window-title-regex-substring = '^(Zoom|Zoom Workplace|Zoom Meeting)$'
-run = 'move-node-to-workspace "Comms(8)"'
+if.window-title-regex-substring = '^(Zoom|Zoom Workplace)$|^Zoom Meeting'
+run = ['layout tiling', 'move-node-to-workspace "Comms(8)"']
 
 [[on-window-detected]]
 if.app-id = 'us.zoom.xos'

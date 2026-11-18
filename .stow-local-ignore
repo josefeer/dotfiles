@@ -1,0 +1,10 @@
+# Files in the repo root that must not be linked into $HOME.
+# Note: this file replaces stow's built-in ignore list, so the defaults are repeated here.
+\.git
+\.gitignore
+\.gitmodules
+\.stow-local-ignore
+\.DS_Store
+^/README.*
+^/LICENSE.*
+^/AGENTS\.md

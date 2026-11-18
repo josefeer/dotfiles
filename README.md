@@ -51,5 +51,6 @@ Clone this repository in your home directory.
 
 From the `~/.dotfiles` directory, run:
 ```bash
+mkdir -p ~/.config  # must be a real directory, if it it will conflict with others apps
 stow . --dotfiles
 ```

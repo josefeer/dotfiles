@@ -1,0 +1,53 @@
+#!/usr/bin/osascript -l JavaScript
+// Open a new Ghostty window split vertically: left pane = 1/4, right pane = 3/4.
+// Usage: ghostty-split [left-fraction]   (default 0.25)
+ObjC.import("CoreGraphics");
+ObjC.import("AppKit");
+
+function ghosttyFrontWidth() {
+  // Window list is ordered front-to-back; no Accessibility permission needed.
+  const list = ObjC.deepUnwrap(
+    ObjC.castRefToObject($.CGWindowListCopyWindowInfo($.kCGWindowListOptionOnScreenOnly, 0))
+  );
+  for (const w of list) {
+    if (w.kCGWindowOwnerName === "Ghostty" && w.kCGWindowLayer === 0) {
+      return w.kCGWindowBounds.Width;
+    }
+  }
+  return 0;
+}
+
+function run(argv) {
+  const leftFraction = argv.length > 0 ? parseFloat(argv[0]) : 1 / 4;
+  const ghostty = Application("Ghostty");
+
+  // A cold launch opens Ghostty's default window; reuse it instead of
+  // creating a second, unsplit window next to it.
+  let win;
+  if (!ghostty.running()) {
+    ghostty.activate();
+    for (let i = 0; i < 50 && ghostty.windows.length === 0; i++) delay(0.1);
+    win = ghostty.windows[0];
+  } else {
+    ghostty.activate();
+    win = ghostty.newWindow();
+  }
+  const leftTerm = win.selectedTab().focusedTerminal();
+
+  // Wait for AeroSpace to tile the window so its width is final.
+  let width = 0, last = -1;
+  for (let i = 0; i < 20; i++) {
+    delay(0.1);
+    width = ghosttyFrontWidth();
+    if (width > 0 && width === last) break;
+    last = width;
+  }
+
+  const rightTerm = ghostty.split(leftTerm, { direction: "right" });
+  delay(0.15);
+
+  // New splits start at 50/50; move the divider left to the target ratio.
+  const deltaPx = Math.round(width * (0.5 - leftFraction));
+  if (deltaPx > 0) ghostty.performAction(`resize_split:left,${deltaPx}`, { on: rightTerm });
+  ghostty.focus(rightTerm);
+}
