@@ -47,6 +47,10 @@ Clone this repository in your home directory.
 
    `nix flake update` updates `flake.lock` (including the apps flake's upstream inputs); skip it if you only changed the package list. `nix profile upgrade` applies the current flake to the installed profile entry. If the upgrade name differs, find it with `nix profile list`. Avoid `--all` unless you want to upgrade every package in your profile.
 
+### Rex on a remote Linux host
+
+See [Rex setup and test commands](dot-config/rex/README.md).
+
 ### Finally
 
 From the `~/.dotfiles` directory, run:
